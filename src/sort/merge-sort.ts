@@ -1,4 +1,4 @@
-export class mergeSort {
+export class MergeSort {
   constructor() {}
   do() {
     function divide(array: number[]): number[] {
@@ -12,8 +12,8 @@ export class mergeSort {
     }
     function merge(lAry: number[], rAry: number[]) {
       const result: number[] = [];
-      let lIdx = 0,
-        rIdx = 0;
+      let lIdx = 0;
+      let rIdx = 0;
       while (lIdx < lAry.length && rIdx < rAry.length) {
         const L = lAry[lIdx];
         const R = rAry[rIdx];
@@ -36,4 +36,5 @@ export class mergeSort {
 // 合併排序（英語：Merge sort），
 // 是建立在合併操作上的一種有效的排序演算法，
 // 效率為 n log n）。
-// 1945年由約翰·馮·紐曼首次提出。該演算法是採用分治法（Divide and Conquer）的一個非常典型的應用，且各層分治遞迴可以同時進行。
+// 1945年由約翰·馮·紐曼首次提出。該演算法是採用分治法（Divide and Conquer）的一個非常典型的應用，
+// 且各層分治遞迴可以同時進行。
