@@ -1,3 +1,4 @@
+// easy
 function flipAndInvertImage(image: number[][]): number[][] {
   function swap(arr: number[], x: number, y: number) {
     const temp = arr[y];
