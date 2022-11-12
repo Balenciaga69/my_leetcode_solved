@@ -1,8 +1,11 @@
 namespace QuickSort {
+  let count = 0;
   function quickSort(array: number[], left: number, right: number) {
     if (left >= right) return array;
+
     let slow = left;
     for (let fast = left; fast < right; fast++) {
+      count++;
       if (array[fast] <= array[right]) {
         swap(array, slow, fast);
         slow = slow + 1;
@@ -18,6 +21,7 @@ namespace QuickSort {
     array[x] = array[y];
     array[y] = temp;
   }
-  const input = [3, 2, 5, 0, 1, 8, 7, 6, 9, 4];
+  const input = [1, 3, 2];
   const output = quickSort(input, 0, input.length - 1);
+  console.log(`正在測試...`, count);
 }
