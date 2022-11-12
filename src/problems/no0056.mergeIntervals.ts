@@ -1,4 +1,4 @@
-namespace lc056 {
+namespace lc0056 {
   function merge(intervals: number[][]): number[][] {
     const ansAry: number[][] = [];
     intervals.sort((a, b) => a[0] - b[0]);

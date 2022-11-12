@@ -1,4 +1,4 @@
-namespace lc016 {
+namespace lc0016 {
   function threeSumClosest(nums: number[], target: number): number {
     nums.sort((a, b) => a - b);
     let compareAbsVal = Infinity;

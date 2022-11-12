@@ -1,4 +1,4 @@
-namespace lc015 {
+namespace lc0015 {
   const input = [-4, -3, -2, -1, -1, 0, 0, 1, 2, 3, 4];
   function threeSum(nums: number[]): number[][] {
     const ansArray: number[][] = [];

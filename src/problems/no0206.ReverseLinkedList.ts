@@ -1,4 +1,4 @@
-namespace lc206 {
+namespace lc0206 {
   function reverseList(head: ListNode | null): ListNode | null {
     let curr = new ListNode();
     if (!head) return null;

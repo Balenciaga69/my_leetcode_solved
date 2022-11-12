@@ -1,4 +1,4 @@
-namespace lc070 {
+namespace lc0070 {
   //easy
   // f(x)=f(x−1)+f(x−2)
   function climbStairs(n: number): number {

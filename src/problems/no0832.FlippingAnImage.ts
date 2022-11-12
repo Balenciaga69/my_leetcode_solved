@@ -1,4 +1,4 @@
-namespace lc832 {
+namespace lc0832 {
   // easy
   function flipAndInvertImage(image: number[][]): number[][] {
     function swap(arr: number[], x: number, y: number) {

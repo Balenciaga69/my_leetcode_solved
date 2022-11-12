@@ -1,4 +1,4 @@
-namespace lc412 {
+namespace lc0412 {
   // easy
   function fizzBuzz(n: number): string[] {
     const result: string[] = [];

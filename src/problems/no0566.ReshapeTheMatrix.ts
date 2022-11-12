@@ -1,4 +1,4 @@
-namespace lc566 {
+namespace lc0566 {
   // easy
   function matrixReshape(mat: number[][], r: number, c: number): number[][] {
     if (mat.length <= 0) return mat;

@@ -1,4 +1,4 @@
-namespace lc045 {
+namespace lc0045 {
   function 逆jump(nums: number[]): number {
     let curr = nums.length - 1;
     let count = 0;
