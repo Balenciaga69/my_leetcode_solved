@@ -19,14 +19,28 @@ export function arrayToBST(ary: (number | null)[]) {
     curr!.val = ary[i]!;
     const leftIdx = i * 2 + 1;
     const rightIdx = i * 2 + 2;
-    if (leftIdx < ary.length && ary[leftIdx]) {
+    if (leftIdx < ary.length && ary[leftIdx] !== null) {
       curr!.left = new TreeNode();
       addNode(curr!.left, leftIdx);
     }
-    if (rightIdx < ary.length && ary[rightIdx]) {
+    if (rightIdx < ary.length && ary[rightIdx] !== null) {
       curr!.right = new TreeNode();
       addNode(curr!.right, rightIdx);
     }
   }
   return root;
+}
+export function getNodeFormBST(root: TreeNode, idx: number) {
+  let result: TreeNode | null = null;
+  run(root);
+  return result;
+  function run(node: TreeNode | null) {
+    if (!node) return;
+    if (node.val === idx) {
+      result = node;
+      return;
+    }
+    if (node.val > idx && node.left) run(node.left);
+    if (node.val < idx && node.right) run(node.right);
+  }
 }

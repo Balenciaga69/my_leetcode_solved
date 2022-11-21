@@ -1,27 +1,25 @@
 namespace QuickSort {
   let count = 0;
-  function quickSort(array: number[], left: number, right: number) {
-    if (left >= right) return array;
-
-    let slow = left;
-    for (let fast = left; fast < right; fast++) {
-      count++;
-      if (array[fast] <= array[right]) {
-        swap(array, slow, fast);
-        slow = slow + 1;
+  function quickSort(array: number[]) {
+    sort(0, array.length - 1);
+    function sort(l: number, r: number) {
+      if (l >= r) return;
+      let i = l - 1;
+      for (let j = l; j < r; j++) {
+        if (array[j] <= array[r]) {
+          i++;
+          [array[i], array[j]] = [array[i], array[j]];
+        }
       }
+      i++; //推進一格作為基準放置點
+      [array[i], array[r]] = [array[r], array[i]];
+      sort(l, i - 1);
+      sort(i + 1, r);
     }
-    swap(array, slow, right);
-    quickSort(array, left, slow - 1);
-    quickSort(array, slow + 1, right);
     return array;
   }
-  function swap(array: number[], x: number, y: number) {
-    const temp = array[x];
-    array[x] = array[y];
-    array[y] = temp;
-  }
-  const input = [1, 3, 2];
-  const output = quickSort(input, 0, input.length - 1);
-  console.log(`正在測試...`, count);
+
+  const input = [3, 2, 1, 5, 6, 4];
+  const output = quickSort(input);
+  console.log(`正在測試...`, output);
 }
