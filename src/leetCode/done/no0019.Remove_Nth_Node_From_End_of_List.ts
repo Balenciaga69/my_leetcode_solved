@@ -1,4 +1,4 @@
-import { arrayToListNode, ListNode } from "../data-structure/class.ListNode";
+import { arrayToListNode, ListNode } from "../../data-structure/class.ListNode";
 
 namespace lc0019 {
   function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {

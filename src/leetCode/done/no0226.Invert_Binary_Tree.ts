@@ -1,4 +1,4 @@
-import { arrayToBST, TreeNode } from "../data-structure/class.treeNode";
+import { arrayToBST, TreeNode } from "../../data-structure/class.treeNode";
 namespace lc0226 {
   function invertTree(root: TreeNode | null): TreeNode | null {
     if (!root) return null;

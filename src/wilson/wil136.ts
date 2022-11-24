@@ -1,4 +1,12 @@
-import { GraphNode } from "./../data-structure/class-graph";
+export class GraphNode {
+  val: string = "";
+  friends: GraphNode[] = [];
+  visited: boolean = false;
+  constructor(val: string) {
+    this.val = val;
+  }
+}
+
 namespace wil136 {
   let A = new GraphNode("A");
   let B = new GraphNode("B");

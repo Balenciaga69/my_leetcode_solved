@@ -1,4 +1,4 @@
-import { arrayToListNode, ListNode } from "../data-structure/class.ListNode";
+import { arrayToListNode, ListNode } from "../../data-structure/class.ListNode";
 namespace lc0143 {
   function reorderList(head: ListNode | null): void {
     if (head === null) return;

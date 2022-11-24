@@ -1,4 +1,4 @@
-import { arrayToBST, TreeNode } from "../data-structure/class.treeNode";
+import { arrayToBST, TreeNode } from "../../data-structure/class.treeNode";
 
 namespace lc0572 {
   function isSubtree(root: TreeNode | null, subRoot: TreeNode | null): boolean {

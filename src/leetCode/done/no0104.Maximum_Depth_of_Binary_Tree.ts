@@ -1,4 +1,4 @@
-import { arrayToBST, TreeNode } from "../data-structure/class.treeNode";
+import { arrayToBST, TreeNode } from "../../data-structure/class.treeNode";
 
 namespace lc0104 {
   function maxDepth(root: TreeNode | null): number {

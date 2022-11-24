@@ -23,8 +23,6 @@ namespace lc0875 {
     h2 = 6;
   minEatingSpeed(piles2, h2);
 }
-const login = 5;
-let x = 5.5;
 // [30,11,23,4,20]
 // [3, 6, 7, 11]
 /**

@@ -1,4 +1,4 @@
-import { arrayToBST, TreeNode } from "../data-structure/class.treeNode";
+import { arrayToBST, TreeNode } from "../../data-structure/class.treeNode";
 
 namespace lc0098 {
   function isValidBST_中序(root: TreeNode | null): boolean {

@@ -1,4 +1,4 @@
-import { TreeNode } from "../data-structure/class.treeNode";
+import { TreeNode } from "../../data-structure/class.treeNode";
 
 namespace lc0145 {
   function postorderTraversal(root: TreeNode | null): number[] {

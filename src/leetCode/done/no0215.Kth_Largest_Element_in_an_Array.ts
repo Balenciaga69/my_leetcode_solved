@@ -1,4 +1,4 @@
-import { minPQ } from "../data-structure/class.priority-queue";
+import { minPQ } from "../../data-structure/class.priority-queue";
 namespace lc0215minPriorityQueue {
   // 該作法 比較慢。
   function findKthLargest(nums: number[], k: number): number {

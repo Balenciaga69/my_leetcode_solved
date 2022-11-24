@@ -1,4 +1,4 @@
-import { maxPQ } from "../data-structure/class.priority-queue";
+import { maxPQ } from "../../data-structure/class.priority-queue";
 namespace lc0239單調佇列 {
   function maxSlidingWindow(nums: number[], k: number): number[] {
     const res: number[] = [];

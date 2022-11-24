@@ -1,4 +1,4 @@
-import { arrayToBST, TreeNode } from "../data-structure/class.treeNode";
+import { arrayToBST, TreeNode } from "../../data-structure/class.treeNode";
 
 namespace lc0102 {
   function levelOrder(root: TreeNode | null): number[][] {

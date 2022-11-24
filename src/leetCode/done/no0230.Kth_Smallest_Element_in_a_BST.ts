@@ -1,4 +1,4 @@
-import { arrayToBST, TreeNode } from "../data-structure/class.treeNode";
+import { arrayToBST, TreeNode } from "../../data-structure/class.treeNode";
 namespace lc0230 {
   function kthSmallest(root: TreeNode | null, k: number): number {
     const stack: TreeNode[] = [];

@@ -1,4 +1,4 @@
-import { minPQ } from "./../data-structure/class.priority-queue";
+import { minPQ } from "../../data-structure/class.priority-queue";
 namespace lc0703 {
   class KthLargest {
     private minPQ = new minPQ();

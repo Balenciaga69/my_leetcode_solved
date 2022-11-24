@@ -1,4 +1,4 @@
-import { TreeNode } from "../data-structure/class.treeNode";
+import { TreeNode } from "../../data-structure/class.treeNode";
 namespace lc0105DIY {
   const map = new Map<number, number>();
   function buildTree(preOrder: number[], inOrder: number[]): TreeNode | null {

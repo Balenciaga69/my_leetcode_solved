@@ -1,4 +1,4 @@
-import { arrayToListNode, ListNode } from "../data-structure/class.ListNode";
+import { arrayToListNode, ListNode } from "../../data-structure/class.ListNode";
 type tNode = ListNode | null;
 namespace lc0023簡易 {
   function mergeKLists(lists: Array<tNode>): tNode {

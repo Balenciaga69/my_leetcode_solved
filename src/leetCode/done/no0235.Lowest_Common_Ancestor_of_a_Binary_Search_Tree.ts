@@ -2,7 +2,7 @@ import {
   arrayToBST,
   getNodeFormBST,
   TreeNode,
-} from "../data-structure/class.treeNode";
+} from "../../data-structure/class.treeNode";
 
 namespace lc0235 {
   function lowestCommonAncestor(

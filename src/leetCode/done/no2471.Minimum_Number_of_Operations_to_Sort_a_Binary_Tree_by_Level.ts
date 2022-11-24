@@ -1,4 +1,4 @@
-import { arrayToBST, TreeNode } from "../data-structure/class.treeNode";
+import { arrayToBST, TreeNode } from "../../data-structure/class.treeNode";
 type T = TreeNode | null;
 namespace lc2471 {
   function minimumOperations(root: T): number {

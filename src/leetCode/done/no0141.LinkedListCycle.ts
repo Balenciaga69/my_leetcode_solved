@@ -1,4 +1,4 @@
-import { ListNode } from "../data-structure/class.ListNode";
+import { ListNode } from "../../data-structure/class.ListNode";
 
 namespace lc0141 {
   function hasCycle(head: ListNode | null): boolean {
