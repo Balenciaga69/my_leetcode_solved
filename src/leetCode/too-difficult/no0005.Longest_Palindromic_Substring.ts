@@ -27,5 +27,7 @@ namespace lc0005 {
         // * * * * * A * * * * *
       }
     }
+    return "";
   }
+  longestPalindrome("babad");
 }
