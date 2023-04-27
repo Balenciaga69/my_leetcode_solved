@@ -2,6 +2,7 @@
 var target = 9;
 var result = TwoSum(nums, target);
 
+Console.WriteLine("Hello World!");
 Console.WriteLine($"[{result[0]}, {result[1]}]");
 
 static int[] TwoSum(int[] nums, int target)
