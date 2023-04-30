@@ -1,41 +1,36 @@
-# Build results
-[Dd]ebug/
-[Rr]elease/
-x64/
-x86/
-build/
-[Bb]in/
-[Oo]bj/
+# Binaries
+*.exe
+*.dll
+*.pdb
+*.ilk
 
-# Visual Studio files
-.vs/
-*.suo
-*.cache
-*.sln.docstates
-*.dll.refresh
-[Bb]uild[Ll]og.*
-[Tt]est[Rr]esult*
-
-# Resharper files
-_ReSharper*/
-
-# .NET Core files
-project.lock.json
-project.fragment.lock.json
-*.nuget.props
-*.nuget.targets
-
-# User-specific files
-*.user
-*.sln.ide
-*.suo
-*.userprefs
-*.vssettings
-*.vssscc
-*.vspscc
-*.resharper
-
-# LeetCode files
-*.csproj.user
+# Build output
 bin/
 obj/
+packages/
+
+# Visual Studio files
+*.suo
+*.user
+*.sln.docstates
+*.vs/
+*.csproj.user
+*.sln.ide
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# NuGet restore
+project.lock.json
+project.assets.json
+
+# IDE configuration
+.vscode/
+.idea/
+.vs/
+
+# Environment configuration
+appsettings.json
+*.config

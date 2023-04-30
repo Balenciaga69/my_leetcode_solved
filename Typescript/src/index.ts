@@ -37,7 +37,7 @@
 //    },
 //    "停下": {
 //      "scope": "javascript,typescript,typescriptreact,javascriptreact,csharp",
-//      "prefix": "-ENDS",
+//      "prefix": "-END",
 //      "body": ["// chatGPT任務作用域結束"]
 //    }
 //  }
