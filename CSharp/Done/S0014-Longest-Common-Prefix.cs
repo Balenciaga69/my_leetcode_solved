@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Csharp.Done
 {
-    public class S0014_Longest_Common_Prefix_Easy_Ver
+    public class S0014_Longest_Common_Prefix
     {
         public string LongestCommonPrefix(string[] strs)
         {

@@ -9,3 +9,13 @@ function removeElement(array: number[], val: number): number {
   }
   return originalArrayLength - countRemovedElements
 }
+
+type F = (...p: any[]) => any
+
+function debounce(fn: F, t: number): F {
+  let id: ReturnType<typeof setTimeout>
+  return function (...args) {
+    clearTimeout(id)
+    id = setTimeout(() => fn(...args), t)
+  }
+}
