@@ -1,6 +1,6 @@
 ﻿using Csharp.LeetCode.Structure;
 
-namespace Csharp.Hepler
+namespace Csharp.Helper
 {
     public class Helper
     {

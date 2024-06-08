@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using Csharp.Hepler;
+using Csharp.Helper;
 using Csharp.LeetCode.Structure;
 
 namespace Csharp.Done
@@ -94,10 +94,11 @@ namespace Csharp.Done
 
       public void Run()
       {
-         var helper = new Helper();
+         var helper = new Helper.Helper();
          var a = helper.ConvertArrayToLinkedList(new int[] { 9, 9, 9, 9, 9, 9, 9 });
          var b = helper.ConvertArrayToLinkedList(new int[] { 9, 9, 9, 9 });
          var c = AddTwoNumbers_QueueVer(a, b);
+         Console.WriteLine(c.val);
       }
    }
 }
