@@ -1,4 +1,4 @@
-﻿namespace Csharp.LeetCode.Structure
+﻿namespace Csharp.Structure
 {
     public class ListNode
     {

@@ -1,4 +1,4 @@
-﻿using Csharp.LeetCode.Structure;
+﻿using Csharp.Structure;
 
 namespace Csharp.Helper
 {

@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using Csharp.Helper;
-using Csharp.LeetCode.Structure;
+using Csharp.Structure;
 
 namespace Csharp.Done
 {
-   public class S0002_Add_Two_Numbers
+    public class S0002_Add_Two_Numbers
    {
       public ListNode? AddTwoNumbers(ListNode? l1, ListNode? l2)
       {

@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Csharp.Done
+﻿namespace Csharp.Done
 {
     public class S0014_Longest_Common_Prefix
     {
-        public string LongestCommonPrefix(string[] strs)
+        public string LongestCommonPrefix(string[] strings)
         {
             var longestPrefix = "";
             var currIndex = 0;
             var continueComparing = true;
             while (continueComparing)
             {
-                var theChar = getSameChar(strs, currIndex);
+                var theChar = getSameChar(strings, currIndex);
                 if (string.IsNullOrEmpty(theChar))
                 {
                     continueComparing = false;

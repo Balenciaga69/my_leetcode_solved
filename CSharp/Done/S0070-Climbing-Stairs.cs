@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Csharp.Done
+﻿namespace Csharp.Done
 {
     public class S0070_Climbing_Stairs
     {
+        
+
         public int ClimbStairs(int n)
         {
             var dp = new int[n + 1];
