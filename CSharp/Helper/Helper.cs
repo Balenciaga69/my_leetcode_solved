@@ -1,7 +1,7 @@
-﻿using Csharp.Structure;
-
-namespace Csharp.Helper
+﻿namespace Csharp.Helper
 {
+    using Csharp.Structure;
+
     public class Helper
     {
         public ListNode? ConvertArrayToLinkedList(int[] arr)

@@ -1,9 +1,7 @@
 ﻿namespace Csharp.Done
 {
-    public class S0070_Climbing_Stairs
+    public class S0070ClimbingStairs
     {
-        
-
         public int ClimbStairs(int n)
         {
             var dp = new int[n + 1];
@@ -13,6 +11,7 @@
             {
                 dp[i] = dp[i - 1] + dp[i - 2];
             }
+
             return dp[n];
         }
     }

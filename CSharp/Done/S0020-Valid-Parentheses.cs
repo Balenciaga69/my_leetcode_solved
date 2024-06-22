@@ -1,6 +1,6 @@
 ﻿namespace Csharp.Done
 {
-    public class S0020_Valid_Parentheses
+    public class S0020ValidParentheses
     {
         public bool IsValid(string str)
         {
@@ -14,7 +14,11 @@
                 if (isInLeft) { stack.Push(curr); }
                 else
                 {
-                    if (stack.Count == 0) return false;
+                    if (stack.Count == 0)
+                    {
+                        return false;
+                    }
+
                     int rightIdx = Array.IndexOf(right, curr);
                     var peekLeft = stack.Peek();
                     if (peekLeft != left[rightIdx])
@@ -27,6 +31,7 @@
                     }
                 }
             }
+
             return stack.Count == 0;
         }
     }

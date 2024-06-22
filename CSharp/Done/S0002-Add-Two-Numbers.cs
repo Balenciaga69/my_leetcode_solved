@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using Csharp.Helper;
-using Csharp.Structure;
-
-namespace Csharp.Done
+﻿namespace Csharp.Done
 {
-    public class S0002_Add_Two_Numbers
+    using System.Collections;
+    using Csharp.Helper;
+    using Csharp.Structure;
+
+    public class S0002AddTwoNumbers
    {
       public ListNode? AddTwoNumbers(ListNode? l1, ListNode? l2)
       {
@@ -20,11 +20,13 @@ namespace Csharp.Done
                sum += l1.val;
                l1 = l1.next;
             }
+
             if (l2 != null)
             {
                sum += l2.val;
                l2 = l2.next;
             }
+
             if (currentNode == null)
             {
                currentNode = new ListNode(sum % 10, null);
@@ -34,10 +36,12 @@ namespace Csharp.Done
                currentNode.next = new ListNode(sum % 10, null);
                currentNode = currentNode.next;
             }
+
             if (result == null)
             {
                result = currentNode;
             }
+
             curry = sum / 10;
          }
 
@@ -45,10 +49,11 @@ namespace Csharp.Done
          {
             currentNode.next = new ListNode(curry, null);
          }
+
          return result;
       }
 
-      public ListNode AddTwoNumbers_QueueVer(ListNode? l1, ListNode? l2)
+      public ListNode AddTwoNumbersQueueVer(ListNode? l1, ListNode? l2)
       {
          var queue1 = new Queue<int>();
          var queue2 = new Queue<int>();
@@ -62,12 +67,14 @@ namespace Csharp.Done
                queue1.Enqueue(l1.val);
                l1 = l1.next;
             }
+
             if (l2 != null)
             {
                queue2.Enqueue(l2.val);
                l2 = l2.next;
             }
          }
+
          while (queue1.Count != 0 || queue2.Count != 0)
          {
             var val1 = queue1.Count > 0 ? queue1.Dequeue() : 0;
@@ -85,10 +92,12 @@ namespace Csharp.Done
                root = currentNode;
             }
          }
+
          if (curry > 0 && currentNode != null)
          {
             currentNode.next = new ListNode(curry % 10, null);
          }
+
          return root ?? new ListNode(0, null);
       }
 
@@ -97,7 +106,7 @@ namespace Csharp.Done
          var helper = new Helper.Helper();
          var a = helper.ConvertArrayToLinkedList(new int[] { 9, 9, 9, 9, 9, 9, 9 });
          var b = helper.ConvertArrayToLinkedList(new int[] { 9, 9, 9, 9 });
-         var c = AddTwoNumbers_QueueVer(a, b);
+         var c = AddTwoNumbersQueueVer(a, b);
          Console.WriteLine(c.val);
       }
    }

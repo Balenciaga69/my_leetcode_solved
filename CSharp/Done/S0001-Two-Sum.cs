@@ -1,8 +1,8 @@
-﻿using System.Collections;
-
-namespace Csharp.Done
+﻿namespace Csharp.Done
 {
-    public class S0001_Two_Sum
+    using System.Collections;
+
+    public class S0001TwoSum
     {
         public int[] TwoSum(int[] nums, int target)
         {
@@ -21,6 +21,7 @@ namespace Csharp.Done
                     hTable.Add(nowNum, i);
                 }
             }
+
             return new int[] { -1, -1 };
         }
     }
