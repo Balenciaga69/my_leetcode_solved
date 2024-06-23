@@ -103,10 +103,10 @@
 
       public void Run()
       {
-         var helper = new Helper.Helper();
+         var helper = new Helper();
          var a = helper.ConvertArrayToLinkedList(new int[] { 9, 9, 9, 9, 9, 9, 9 });
          var b = helper.ConvertArrayToLinkedList(new int[] { 9, 9, 9, 9 });
-         var c = AddTwoNumbersQueueVer(a, b);
+         var c = this.AddTwoNumbersQueueVer(a, b);
          Console.WriteLine(c.val);
       }
    }
