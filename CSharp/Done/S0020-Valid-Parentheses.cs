@@ -11,7 +11,10 @@
             {
                 char curr = str[i];
                 bool isInLeft = left.Contains(curr);
-                if (isInLeft) { stack.Push(curr); }
+                if (isInLeft)
+                {
+                    stack.Push(curr);
+                }
                 else
                 {
                     if (stack.Count == 0)

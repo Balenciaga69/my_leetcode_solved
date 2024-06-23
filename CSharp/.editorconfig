@@ -233,6 +233,7 @@ dotnet_diagnostic.SA1600.severity = none
 dotnet_diagnostic.SA1649.severity = none
 dotnet_diagnostic.SA1200.severity = none
 dotnet_diagnostic.SA1633.severity = none
+dotnet_diagnostic.SA1503.severity = none
 
 [*.{cs,vb}]
 end_of_line = crlf

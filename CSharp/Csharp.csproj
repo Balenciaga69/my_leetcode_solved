@@ -21,4 +21,10 @@
       <HintPath>Libs\ClassLibrary1.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Custom\A-Code\Project\GK-LC-Files\CSharp\.editorconfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Custom\A-Code\Project\GK-LC-Files\CSharp\.editorconfig" />
+  </ItemGroup>
 </Project>
