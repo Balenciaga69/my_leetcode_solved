@@ -1,6 +1,6 @@
 ﻿namespace Csharp.Done
 {
-    public class S0014LongestCommonPrefix
+    public class S0014_Longest_Common_Prefix
     {
         public string LongestCommonPrefix(string[] strings)
         {

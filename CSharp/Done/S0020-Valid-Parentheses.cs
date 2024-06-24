@@ -1,6 +1,6 @@
 ﻿namespace Csharp.Done
 {
-    public class S0020ValidParentheses
+    public class S0020_Valid_Parentheses
     {
         public bool IsValid(string str)
         {

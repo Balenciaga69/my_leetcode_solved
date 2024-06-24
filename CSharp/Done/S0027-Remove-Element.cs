@@ -1,6 +1,6 @@
 ﻿ namespace Csharp.Done
 {
-   public class S0027RemoveElement
+   public class S0027_Remove_Element
    {
       public int RemoveElement(int[] nums, int val)
       {

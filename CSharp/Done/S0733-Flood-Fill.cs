@@ -1,6 +1,6 @@
 ﻿namespace Csharp.Done
 {
-    public class S0733FloodFill
+    public class S0733_Flood_Fill
     {
         public void Run()
         {

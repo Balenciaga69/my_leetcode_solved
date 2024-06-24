@@ -1,6 +1,6 @@
 ﻿namespace Csharp.Done
 {
-    public class S0070ClimbingStairs
+    public class S0070_Climbing_Stairs
     {
         public int ClimbStairs(int n)
         {

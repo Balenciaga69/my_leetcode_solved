@@ -4,7 +4,7 @@
     using Csharp.Helper;
     using Csharp.Structure;
 
-    public class S0002AddTwoNumbers
+    public class S0002_Add_Two_Numbers
    {
       public ListNode? AddTwoNumbers(ListNode? l1, ListNode? l2)
       {

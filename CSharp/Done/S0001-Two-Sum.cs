@@ -2,7 +2,7 @@
 {
     using System.Collections;
 
-    public class S0001TwoSum
+    public class S0001_Two_Sum
     {
         public int[] TwoSum(int[] nums, int target)
         {
