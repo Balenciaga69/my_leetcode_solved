@@ -1,4 +1,4 @@
 ﻿using Csharp.Done;
 
-var question = new S0134_Gas_Station();
-question.Execute();
+var question = new S0062_Unique_Paths();
+question.Run();
