@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Csharp.Done
 {
-    public class S0062_Unique_Paths
+    internal class S0062_Unique_Paths
     {
         public void Run()
         {
-            var result = UniquePaths(3, 2);
+            var result = this.UniquePaths(3, 2);
         }
 
         public int UniquePaths(int m, int n)

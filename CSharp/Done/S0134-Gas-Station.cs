@@ -5,7 +5,8 @@
         public void Execute()
         {
             var gas = new int[] { 0, 0, 0, 2, 13 };
-            //var gas = new int[] { 1, 2, 3, 4, 5 };
+
+            // var gas = new int[] { 1, 2, 3, 4, 5 };
             var cost = new int[] { 3, 4, 5, 1, 2 };
             var ans = this.CanCompleteCircuit(gas, cost);
             Console.WriteLine(ans);
