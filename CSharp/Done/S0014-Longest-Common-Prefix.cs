@@ -4,49 +4,25 @@
     {
         public string LongestCommonPrefix(string[] strings)
         {
-            var longestPrefix = string.Empty;
-            var currIndex = 0;
-            var continueComparing = true;
-            while (continueComparing)
+            // 空數組 直接結束
+            if (strings is null || strings.Length == 0) return string.Empty;
+
+            var i = 0; // 同步指針
+            var atLeastOneFlag = false; // 保證至少有被修改過一次
+            while (true)
             {
-                var theChar = this.GetSameChar(strings, currIndex);
-                if (string.IsNullOrEmpty(theChar))
-                {
-                    continueComparing = false;
-                }
-                else
-                {
-                    longestPrefix += theChar;
-                    currIndex++;
-                }
+                // i 超出指標 則 '~' (表示超出範圍) 否則取出 s[i]
+                var allChar = strings.Select(str => i >= str.Length ? '~' : str[i]);
+
+                // 該字串沒有超出長度 且 大家都跟strings[0][i]的char一樣
+                var isSame = allChar.All(c => c != '~' && c == allChar.First());
+                if (!isSame) break; // 不是最長前綴了 離開Loop
+
+                i++;
+                atLeastOneFlag = true;
             }
 
-            return longestPrefix;
-        }
-
-        private string GetSameChar(string[] strs, int targetIndex)
-        {
-            if (targetIndex >= strs[0].Length)
-            {
-                return string.Empty;
-            }
-
-            var targetChar = strs[0][targetIndex];
-            for (int i = 1; i < strs.Length; i++)
-            {
-                if (targetIndex >= strs[i].Length)
-                {
-                    return string.Empty;
-                }
-
-                var currentChar = strs[i][targetIndex];
-                if (currentChar != targetChar)
-                {
-                    return string.Empty;
-                }
-            }
-
-            return targetChar.ToString();
+            return atLeastOneFlag ? strings[0].Substring(0, i) : string.Empty;
         }
     }
 }
