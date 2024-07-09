@@ -1,4 +1,3 @@
 ﻿using Csharp.Done;
 
-var question = new S0053_Maximum_Subarray();
-question.Run();
+new S0274_H_Index();
