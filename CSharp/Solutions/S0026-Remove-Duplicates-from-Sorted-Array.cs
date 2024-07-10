@@ -1,4 +1,4 @@
-﻿namespace Csharp.Done
+﻿namespace Csharp.Solutions
 {
     internal class S0026_Remove_Duplicates_from_Sorted_Array
     {

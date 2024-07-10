@@ -1,4 +1,4 @@
-﻿namespace Csharp.Done
+﻿namespace Csharp.Solutions
 {
     using System.Collections;
     using Csharp.Helper;

@@ -1,4 +1,4 @@
-﻿namespace Csharp.Done
+﻿namespace Csharp.Solutions
 {
     public class S0014_Longest_Common_Prefix
     {

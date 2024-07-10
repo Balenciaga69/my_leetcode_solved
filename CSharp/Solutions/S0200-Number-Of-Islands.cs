@@ -1,4 +1,4 @@
-﻿namespace Csharp.Done
+﻿namespace Csharp.Solutions
 {
     internal class S0200_Number_Of_Islands
     {

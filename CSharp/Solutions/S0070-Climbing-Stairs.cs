@@ -1,4 +1,4 @@
-﻿namespace Csharp.Done
+﻿namespace Csharp.Solutions
 {
     public class S0070_Climbing_Stairs
     {

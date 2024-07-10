@@ -1,6 +1,6 @@
 using Csharp.Structure;
 
-namespace CSharp.Done
+namespace Csharp.Solutions
 {
     public class S0108_Ary_To_BST
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Csharp.Done
+namespace Csharp.Solutions
 {
     internal class S0383_Ransom_Note
     {

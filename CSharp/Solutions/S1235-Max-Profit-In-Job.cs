@@ -1,8 +1,8 @@
-﻿namespace Csharp.Done
+﻿namespace Csharp.Solutions
 {
-    internal class S01235_Max_Profit_In_Job
+    internal class S1235_Max_Profit_In_Job
     {
-        public S01235_Max_Profit_In_Job()
+        public S1235_Max_Profit_In_Job()
         {
             var startTime = new int[] { 1, 2, 3, 4, 6 };
             var endTime = new int[] { 3, 5, 10, 6, 9 };
