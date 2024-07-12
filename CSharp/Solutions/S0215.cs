@@ -41,6 +41,11 @@
 
             public void Insert(int val)
             {
+                if (this.size >= this.length)
+                {
+                    throw new InvalidOperationException("Heap is full");
+                }
+
                 // 塞入末端
                 this.size++;
                 this.heap[this.size] = val;
@@ -61,7 +66,7 @@
                 if (this.size < 1) return int.MinValue;
 
                 // 取出根基
-                int min = this.heap[1];
+                int max = this.heap[1];
 
                 // 拿末端值 扔回根基
                 this.heap[1] = this.heap[this.size];
@@ -70,7 +75,7 @@
                 // 重新比大小
                 this.Heapify(1);
 
-                return min;
+                return max;
             }
 
             public void Heapify(int i)
