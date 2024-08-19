@@ -1,0 +1,27 @@
+请写出 SQL 语句返回给定日期下所有 portfolio 的最新 value。 
+请注意，如果在给定日期某个 portfolio 没有 value, 
+则使用此日期之前表中此 portfolio 的最后一个日期的 value。
+
+SELECT
+    ID,
+    Name,
+    Value
+FROM
+    (
+    SELECT
+        p1.ID,
+        p1.Name,
+        p2.Date,
+        p2.Value,
+        ROW_NUMBER() OVER (PARTITION BY p1.ID ORDER BY p2.Date DESC) AS rowNum // 直接用窗口函數 取得每個ID下最新日期的行號
+    FROM
+        Portfolio p1
+    LEFT JOIN
+        PortfolioValue p2
+    ON
+        p1.ID = p2.PortfolioID
+    WHERE
+        p2.Date <= @Param參數日期
+)
+WHERE
+    rowNum = 1;
