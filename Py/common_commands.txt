@@ -1,0 +1,6 @@
+python -m venv myenv
+myenv\Scripts\activate
+pip install pylint mypy
+deactivate
+
+pylint --generate-rcfile > .pylintrc
