@@ -1,5 +1,5 @@
-python -m venv myenv
-myenv\Scripts\activate
+python -m venv leetcode_env
+leetcode_env\Scripts\activate
 pip install pylint mypy
 deactivate
 
