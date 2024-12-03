@@ -1,3 +1,4 @@
+from collections import deque
 from typing import List, Optional
 from dataStructure.treeNode import TreeNode, listToTree
 
@@ -10,7 +11,23 @@ root1 = listToTree(l1)
 
 class Solution:
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        return []
+        if root is None:
+            return []
+
+        stack: deque[TreeNode] = deque()
+        result: list[int] = []
+
+        stack.append(root)
+
+        while len(stack) > 0:
+            curr_node = stack.pop()
+            result.append(curr_node.val)
+            if curr_node.right is not None:
+                stack.append(curr_node.right)
+            if curr_node.left is not None:
+                stack.append(curr_node.left)
+                continue
+        return result
 
 
 Solution().preorderTraversal(root=root1)
