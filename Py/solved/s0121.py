@@ -4,21 +4,14 @@ from dataStructure.ListNode import ListNode
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        fast = head
-        slow = head
-        canSlowMove = False
-        while True:
-            if fast is None or slow is None:
-                return False
-            fast = fast.next
-            if canSlowMove:
-                if fast is None:
-                    return False
-                fast = fast.next
-                slow = slow.next
-                if slow == fast and fast is not None:
-                    return True
-            canSlowMove = not canSlowMove
+        val_set = set[ListNode]()
+        while head is not None:
+            if head in val_set:
+                return True
+            val_set.add(head)
+            head = head.next
+        return False
+
 
 nod1 = ListNode(val=3)
 nod2 = ListNode(val=2)
