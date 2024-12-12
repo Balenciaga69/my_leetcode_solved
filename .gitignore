@@ -100,3 +100,6 @@ project.assets.json
 *.swp
 *.swo
 *.tmp
+
+# Customer
+leetcode_env/
