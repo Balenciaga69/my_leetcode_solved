@@ -10,7 +10,7 @@
 箭矢一旦發射，就會無限向上飛，並爆破它路徑上的所有氣球。
 現在，給定這個 points 陣列，請你返回至少需要發射幾支箭才能爆破所有的氣球。
 Example 1:
-Input: points = [[10,16],[2,8],[1,6],[7,12]]
+Input: points = [[1,6],[2,8],[7,12],[10,16]]
 Output: 2
 
 Example 2:
@@ -21,9 +21,45 @@ namespace Csharp.Solutions.S0452
 {
     public class Solution
     {
+        // 雖然代碼寫得很醜，但能初步表達邏輯
         public int FindMinArrowShots(int[][] points)
         {
+            var count = 0;
+            var lastEnd = 0;
+            Array.Sort(points, (a, b) => a[1].CompareTo(b[1]));
 
+            foreach (var ballon in points)
+            {
+                // 第一顆氣球
+                if (count == 0)
+                {
+                    count++;
+                    lastEnd = ballon[1];
+                    continue;
+                }
+
+                // 氣球被射穿了
+                if (ballon[0] <= lastEnd)
+                {
+                    continue;
+                }
+
+                // 換一顆新氣球
+                else
+                {
+                    count++;
+                    lastEnd = ballon[1];
+                    continue;
+                }
+            }
+
+            return count;
+        }
+
+        public Solution()
+        {
+            int[][] points = { new[] { 10, 16 }, new[] { 2, 8 }, new[] { 1, 6 }, new[] { 7, 12 } };
+            this.FindMinArrowShots(points);
         }
     }
 }
