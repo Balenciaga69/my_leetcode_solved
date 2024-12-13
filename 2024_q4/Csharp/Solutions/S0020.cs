@@ -16,7 +16,7 @@ namespace Csharp.Solutions.S0020
 
         public bool IsValid(string s)
         {
-            if (s.Length < 2) return false;
+            if (s.Length % 2 != 0) return false;
             var leftStack = new Stack<char>();
             var parenthesesMap = new Dictionary<char, char>
             {
@@ -39,7 +39,8 @@ namespace Csharp.Solutions.S0020
                     if (matchLeft != leftStack.Pop()) return false;
                 }
             }
-            return true;
+
+            return !(leftStack.Count > 0);
         }
     }
 }
