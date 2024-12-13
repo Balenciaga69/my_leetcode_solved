@@ -15,7 +15,6 @@ namespace Csharp.Solutions.S0155
             m.Push(2);
             m.Push(1);
         }
-
     }
 
     public class MinStack
