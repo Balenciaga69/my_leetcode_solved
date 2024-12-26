@@ -1,3 +1,3 @@
-﻿using Csharp.Solutions.S0300;
+﻿using Csharp.Solutions.S0518;
 
 new Solution();
