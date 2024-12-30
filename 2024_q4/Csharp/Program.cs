@@ -1,3 +1,4 @@
-﻿using Csharp.Solutions.S0227;
-
-new Solution();
+﻿for (var i = 0; i <= 120; i++)
+{
+    Console.WriteLine(^i);
+}
