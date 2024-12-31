@@ -1,4 +1,2 @@
-﻿for (var i = 0; i <= 120; i++)
-{
-    Console.WriteLine(^i);
-}
+﻿using Csharp.Solutions.S0344;
+new Solution();
