@@ -1,2 +1,2 @@
-﻿using Csharp.Solutions.S0344;
+﻿using Csharp.Solutions.S0424;
 new Solution();
