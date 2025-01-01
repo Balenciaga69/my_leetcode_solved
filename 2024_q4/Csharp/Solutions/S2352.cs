@@ -19,8 +19,8 @@ namespace Csharp.Solutions.S2352
             };
             var grid2 = new int[][]
             {
-                [13,13],
-                [13,13],
+                [13, 13],
+                [13, 13],
             };
             this.EqualPairs(grid2);
         }
@@ -50,6 +50,7 @@ namespace Csharp.Solutions.S2352
                     count += dict[target];
                 }
             }
+
             return count;
         }
     }

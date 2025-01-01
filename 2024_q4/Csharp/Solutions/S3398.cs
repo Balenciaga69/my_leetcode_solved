@@ -7,7 +7,7 @@
             // 選最小 且沒人選過的數字
             Array.Sort(nums);
             var set = new HashSet<int>();
-            var nextStart = Int32.MinValue;
+            var nextStart = int.MinValue;
 
             for (int i = 0; i < nums.Length; i++)
             {

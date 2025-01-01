@@ -17,7 +17,6 @@ namespace Csharp.Solutions.S0198
 {
     public class Solution
     {
-
         public Solution()
         {
             var houses = new int[] { 2, 7, 9, 3, 1 };
@@ -40,5 +39,4 @@ namespace Csharp.Solutions.S0198
             return dp.Last();
         }
     }
-
 }
