@@ -2,15 +2,15 @@
 {
     public class TreeNode
     {
-        public int Val;
-        public TreeNode Left;
-        public TreeNode Right;
+        public int val;
+        public TreeNode? left;
+        public TreeNode? right;
 
         public TreeNode(int val = 0, TreeNode? left = null, TreeNode? right = null)
         {
-            this.Val = val;
-            this.Left = left;
-            this.Right = right;
+            this.val = val;
+            this.left = left;
+            this.right = right;
         }
     }
 }
