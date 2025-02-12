@@ -5,7 +5,17 @@ public static class Helper
 {
     public static ListNode? ConvertArrayToLinkedList(int[] arr)
     {
-        return arr.Aggregate((ListNode?)null, (next, val) => new ListNode(val, next));
+        ListNode head = new ListNode(arr[0], null);
+        var curr = head;
+        for (int i = 1; i < arr.Length; i++)
+        {
+            curr.next = new ListNode(arr[i], null);
+            curr = curr.next;
+        }
+
+        return head;
+
+        //return arr.Aggregate((ListNode?)null, (next, val) => new ListNode(val, next));
     }
 
     public static TreeNode ConvertArrayToBST(int?[] arr)
