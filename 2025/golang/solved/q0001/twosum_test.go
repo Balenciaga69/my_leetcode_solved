@@ -1,4 +1,4 @@
-package twosum
+package q0001
 
 import (
 	"reflect"

@@ -1,4 +1,4 @@
-package climbingstairs
+package q0070
 
 import "testing"
 
