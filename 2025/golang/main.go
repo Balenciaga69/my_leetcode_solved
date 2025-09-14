@@ -1,11 +1,16 @@
 package main
 
 import (
-	"LeetCode/solved/Q0001_Two_Sum"
-	"LeetCode/solved/Q0070_Climbing_Stairs"
+	"os"
+	"os/exec"
 )
 
 func main() {
-	Q0001_Two_Sum.Exec()
-	Q0070_Climbing_Stairs.Exec()
+	// 執行所有測試
+	cmd := exec.Command("go", "test", "./solved/...")
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	if err := cmd.Run(); err != nil {
+		panic(err)
+	}
 }
