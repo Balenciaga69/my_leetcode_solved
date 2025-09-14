@@ -1,8 +1,6 @@
-﻿package solved
+﻿package Q0001_Two_Sum
 
-import (
-	"fmt"
-)
+import "fmt"
 
 /*
   - 給定一個名為 nums 的整數陣列以及一個名為 target 的整數，
