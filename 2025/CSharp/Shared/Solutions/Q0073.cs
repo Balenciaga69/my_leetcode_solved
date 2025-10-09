@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Shared.Solutions;
+﻿namespace Shared.Solutions;
 
 public partial class Solution
 {
@@ -34,6 +28,5 @@ public partial class Solution
                 }
             }
         }
-       
     }
 }
