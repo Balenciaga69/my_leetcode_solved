@@ -1,10 +1,9 @@
 namespace Tests;
 
-// 假設您的 Solution 類別在 Shared.Solutions 命名空間中
 using Shared.Solutions;
-using Xunit; // 引入 Xunit 相關的命名空間
+using Xunit; 
 
-public class Q1518Tests // 依照 LeetCode 題號命名測試類別
+public class Q1518Tests 
 {
     [Theory]
     [InlineData(9, 3, 13)]
