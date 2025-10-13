@@ -9,7 +9,7 @@ public class Q0121Tests
     [InlineData(new int[] { 1 }, 0)]
     public void Test1(int[] prices, int expected)
     {
-        var result = new Solution().MaxProfit(prices);
+        var result = new Solution().MaxProfit_0121(prices);
         Assert.Equal(expected, result);
     }
 }

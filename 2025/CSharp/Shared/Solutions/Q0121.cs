@@ -3,7 +3,7 @@
 // Topics: Array, DP
 public partial class Solution
 {
-    public int MaxProfit(int[] prices)
+    public int MaxProfit_0121(int[] prices)
     {
         int minPrice = int.MaxValue;
         int maxProfit = 0;
