@@ -1,9 +1,4 @@
 ﻿using Shared.Solutions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tests;
 
@@ -21,7 +16,7 @@ public class Q0309Tests
     [MemberData(nameof(GetMaxProfitTestData))]
     public void MaxProfit_ShouldReturnExpectedResult(int[] prices, int expected)
     {
-        var actual = new Solution().MaxProfit(prices);
+        var actual = new Solution().MaxProfit_0309(prices);
         Assert.Equal(expected, actual);
     }
 }

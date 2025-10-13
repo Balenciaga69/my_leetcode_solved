@@ -1,9 +1,9 @@
 namespace Tests;
 
 using Shared.Solutions;
-using Xunit; 
+using Xunit;
 
-public class Q1518Tests 
+public class Q1518Tests
 {
     [Theory]
     [InlineData(9, 3, 13)]
