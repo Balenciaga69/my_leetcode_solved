@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2019",
+    "jsx": "preserve",
+    "types": ["jest", "node"],
+    "outDir": "dist-jest"
+  },
+  "include": ["src/**/*", "**/*.test.ts", "**/*.spec.ts"]
+}
