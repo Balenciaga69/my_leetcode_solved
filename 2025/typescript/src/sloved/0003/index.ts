@@ -1,6 +1,6 @@
-﻿/** 0410
+﻿/**
 Date: 2025-10-25
-TimeSpent: 60 mins
+TimeSpent: 37 mins
 ---
 Given a string s, find the length of the longest substring without duplicate characters.
 給定一個字串 s，求最長的長度 子字串，沒有重複字元。
