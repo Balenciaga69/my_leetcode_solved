@@ -40,12 +40,12 @@ export function characterReplacement(s: string, k: number): number {
   const get = (key: string) => (map.has(key) ? map.get(key)! : 0)
   let l = 0
   let maxLen = 0
-  for (let r = 0; r < s.length; r++) {
+  for (let r = 0; r < s.length; r++) { // 向右擴張
     const ch = s[r]
     let maxCount = 0
     map.set(ch, get(ch) + 1)
     map.forEach((n) => (maxCount = Math.max(maxCount, n)))
-    while (r - l + 1 > k + maxCount) {
+    while (r - l + 1 > k + maxCount) { // 當前視窗單字數 > 可容忍範圍
       map.set(s[l], get(s[l]) - 1)
       l++
     }

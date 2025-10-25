@@ -3,7 +3,7 @@ Date: 2025-10-25
 TimeSpent: 60 mins
 ---
 Given an [unsorted array] of integers nums, return the length of the [longest consecutive elements sequence].
-You must write an algorithm that runs in O(n) time. [只能觸發 n 次]
+You must write an algorithm that runs in O(n) time.
 
 Constraints:
 0 <= nums.length <= 105
