@@ -19,7 +19,6 @@ describe('Best Time to Buy and Sell Stock II', () => {
   });
 
   test('部分上升', () => {
-    expect(maxProfit([2, 4, 1, 7])).toBe(8 - 3 ? 6 : 6); // 實際應該是 (4-2) + (7-1) = 2 + 6 = 8
     expect(maxProfit([2, 4, 1, 7])).toBe(8);
   });
 
