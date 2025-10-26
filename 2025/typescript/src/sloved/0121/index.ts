@@ -1,6 +1,6 @@
 ﻿/*
 Date: 2025-10-26
-TimeSpent: ?? mins
+TimeSpent: 3 mins
 ---
 給定一個整數陣列 prices，其中第 i 個元素代表在第 i 天的股票價格。
 你只能選擇 某一天買入一支股票，並選擇 在未來的某一天賣出該股票（買入日必須早於賣出日），
@@ -22,5 +22,36 @@ TimeSpent: ?? mins
 */
 
 export function maxProfit(prices: number[]): number {
-  return 1
+  let maxProfit = 0
+  let minPrice = Infinity
+  for (const price of prices) {
+    minPrice = Math.min(price, minPrice)
+    maxProfit = Math.max(price - minPrice, maxProfit)
+  }
+  return maxProfit
+}
+/*
+這題是要找出在股票價格陣列中，買進和賣出一次所能獲得的最大利潤。
+我採用的是 一次遍歷 (One Pass) 的線性解法。
+
+我先觀察到：
+如果我在第 i 天賣出股票，最好的買入時機一定是 在 i 之前的最低價。
+所以我們只需要在遍歷時，同步紀錄「目前為止最低價」，並且在每一天試算「如果今天賣出能賺多少」。
+
+### 複雜度分析
+- **時間複雜度**：O(n) 因為我們只遍歷陣列一次。
+- **空間複雜度**：O(1) 只用了兩個變數 `minPrice` 和 `maxProfit`。
+*/
+
+/**
+ * 我一開始的直覺是，既然要找最大獲利，那我可以嘗試所有買入與賣出組合，看看哪一組差價最大。
+ */
+function maxProfitNoobVersion(prices: number[]): number {
+  let maxProfit = 0
+  for (let i = 0; i < prices.length; i++) {
+    for (let j = 0; j < i; j++) {
+      maxProfit = Math.max(maxProfit, prices[i] - prices[j])
+    }
+  }
+  return maxProfit
 }
