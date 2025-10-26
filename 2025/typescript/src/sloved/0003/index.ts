@@ -1,4 +1,4 @@
-﻿/**
+﻿/*
 Date: 2025-10-25
 TimeSpent: 37 mins
 ---
@@ -8,7 +8,24 @@ Constraints:
 0 <= s.length <= 5 * 104
 s consists of English letters, digits, symbols and spaces.
 s 由英文字母、數字、符號和空格組成。
----
+*/
+
+export function lengthOfLongestSubstring(s: string): number {
+  const map = new Map<string, number>() // key,idx
+  let maxLength = 0
+  let l = 0
+  for (let r = 0; r < s.length; r++) {
+    // l r 區間有重複的值
+    if (map.has(s[r]) && map.get(s[r])! >= l) {
+      l = map.get(s[r])! + 1
+    }
+
+    map.set(s[r], r)
+    maxLength = Math.max(r - l + 1, maxLength)
+  }
+  return maxLength
+}
+/*
 你要找的是「最長的、不包含重複字元的連續子字串」。
 注意是 substring（連續），不是 subsequence（可跳著取）。
 用兩個指標（例如 left、right）表示目前視窗的範圍。
@@ -19,18 +36,3 @@ s 由英文字母、數字、符號和空格組成。
 因為每個字元最多被左右指標各掃一次，
 所以整體時間複雜度是 O(n)。
 */
-export function lengthOfLongestSubstring(s: string): number {
-  const map = new Map<string, number>() // key,idx
-  let maxLength = 0
-  let l = 0
-  for (let r = 0; r < s.length; r++) {
-   // l r 區間有重複的值
-    if (map.has(s[r]) && map.get(s[r])! >= l) {
-      l = map.get(s[r])! + 1
-    }
-
-    map.set(s[r], r)
-    maxLength = Math.max(r - l + 1, maxLength)
-  }
-  return maxLength
-}

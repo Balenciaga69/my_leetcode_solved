@@ -11,7 +11,30 @@ TimeSpent: 75 mins
 1 <= s.length <= 105
 s consists of only uppercase English letters.
 0 <= k <= s.length
+*/
+export function characterReplacement(s: string, k: number): number {
+  if (s.length < 2) return s.length
 
+  const map = new Map<string, number>()
+  const get = (key: string) => (map.has(key) ? map.get(key)! : 0)
+  let l = 0
+  let maxLen = 0
+  for (let r = 0; r < s.length; r++) {
+    // 向右擴張
+    const ch = s[r]
+    let maxCount = 0
+    map.set(ch, get(ch) + 1)
+    map.forEach((n) => (maxCount = Math.max(maxCount, n)))
+    while (r - l + 1 > k + maxCount) {
+      // 當前視窗單字數 > 可容忍範圍
+      map.set(s[l], get(s[l]) - 1)
+      l++
+    }
+    maxLen = Math.max(maxLen, r - l + 1)
+  }
+  return maxLen
+}
+/*
 可以將中間的一個 'A' 改成 'B'，得到 "AABBBBA"。
 此時 "BBBB" 是最長的連續相同字母子字串，長度為 4。
 也可能有其他方法能達到相同結果。
@@ -33,23 +56,3 @@ Map 只會記錄 26 種字母的出現次數，因此空間是常數級別。
 這樣時間複雜度能降到嚴格的 O(n)。
 整體邏輯不變，但效能更好。
 */
-export function characterReplacement(s: string, k: number): number {
-  if (s.length < 2) return s.length
-
-  const map = new Map<string, number>()
-  const get = (key: string) => (map.has(key) ? map.get(key)! : 0)
-  let l = 0
-  let maxLen = 0
-  for (let r = 0; r < s.length; r++) { // 向右擴張
-    const ch = s[r]
-    let maxCount = 0
-    map.set(ch, get(ch) + 1)
-    map.forEach((n) => (maxCount = Math.max(maxCount, n)))
-    while (r - l + 1 > k + maxCount) { // 當前視窗單字數 > 可容忍範圍
-      map.set(s[l], get(s[l]) - 1)
-      l++
-    }
-    maxLen = Math.max(maxLen, r - l + 1)
-  }
-  return maxLen
-}
