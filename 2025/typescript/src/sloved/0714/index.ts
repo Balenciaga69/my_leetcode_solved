@@ -30,6 +30,14 @@ TimeSpent: ?? mins
 1 <= prices.length <= 5000
 0 <= prices[i] <= 1000
 */
-export function maxProfit(prices: number[]): number {
-  return 1
+export function maxProfit(prices: number[], fee: number): number {
+  let cash = 0
+  let hold = -prices[0]
+  for (let i = 1; i < prices.length; i++) {
+    const nextCash = Math.max(cash, hold + prices[i] - fee)
+    const nextHold = Math.max(hold, cash - prices[i])
+    cash = nextCash
+    hold = nextHold
+  }
+  return cash
 }

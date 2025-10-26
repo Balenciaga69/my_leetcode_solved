@@ -20,8 +20,8 @@ describe('Best Time to Buy and Sell Stock with Transaction Fee (LeetCode 714)', 
   })
 
   test('波動但手續費影響策略', () => {
-    expect(maxProfit([1, 5, 3, 8, 4, 9], 2)).toBe(9)
-    // (1→5=2) + (3→8=3) + (4→9=3) = 8，但實際要避開重疊手續費，最佳約9
+    expect(maxProfit([1, 5, 3, 8, 4, 9], 2)).toBe(8)
+    // (1→5=2) + (3→8=3) + (4→9=3) = 8
   })
 
   test('高手續費導致無交易', () => {

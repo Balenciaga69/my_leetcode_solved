@@ -26,5 +26,17 @@ TimeSpent: ?? mins
 0 <= prices[i] <= 1000
 */
 export function maxProfit(prices: number[]): number {
-  return 1
+  const n = prices.length
+  if (n < 2) return 0
+  const cash: number[] = [0]
+  const hold: number[] = [-prices[0]]
+  const sold: number[] = [0]
+
+  for (let i = 1; i < n; i++) {
+    const p = prices[i]
+    hold.push(Math.max(hold[i - 1], cash[i - 1] - p)) 
+    sold.push(hold[i - 1] + p) 
+    cash.push(Math.max(cash[i - 1], sold[i - 1])) 
+  }
+  return Math.max(cash[n - 1], sold[n - 1])
 }

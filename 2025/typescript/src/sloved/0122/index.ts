@@ -24,16 +24,18 @@ TimeSpent: 35 mins
 說明: 價格持續下跌，無法獲利。
 */
 export function maxProfit(prices: number[]): number {
-  const cash: number[] = []
-  const hold: number[] = []
+  if (prices.length === 0) return 0
 
-  cash.push(0)
-  hold.push(-prices[0])
+  let cash = 0
+  let hold = -prices[0]
+
   for (let i = 1; i < prices.length; i++) {
-    cash.push(Math.max(cash[i - 1], hold[i - 1] + prices[i]))
-    hold.push(Math.max(hold[i - 1], cash[i - 1] - prices[i]))
+    const newCash = Math.max(cash, hold + prices[i])
+    const newHold = Math.max(hold, cash - prices[i])
+    cash = newCash
+    hold = newHold
   }
-  return cash[prices.length - 1]
+  return cash
 }
 /*
 我把整個交易過程抽象成兩種狀態：

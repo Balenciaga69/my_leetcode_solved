@@ -27,6 +27,6 @@ describe('Best Time to Buy and Sell Stock II', () => {
   });
 
   test('多次波動', () => {
-    expect(maxProfit([1, 2, 3, 4, 3, 5, 0, 5])).toBe(9);
+    expect(maxProfit([1, 2, 3, 4, 3, 5, 0, 5])).toBe(10);
   });
 });
