@@ -1,7 +1,6 @@
 ﻿/*
 Tags: Hash Table, String, Sliding Window
 Date: 2025-10-25
-TimeSpent: 75 mins
 ---
 給定一個字串 s，以及一個整數 k。
 你可以選擇字串中的任意一個字元，並將它改成任何其他的大寫英文字母。

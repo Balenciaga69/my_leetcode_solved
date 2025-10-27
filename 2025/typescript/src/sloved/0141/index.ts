@@ -1,12 +1,8 @@
-﻿/*
-Tags: Linked List, Two Pointers, Hash Table
-*/
-
-import { ListNode } from '../../utils/listUtils'
+﻿import { ListNode } from '../../utils/listUtils'
 
 /*
 Date: 2025-10-25
-TimeSpent: 30 mins
+Tags: Linked List, Two Pointers, Hash Table
 ---
 給定一個鏈結串列的頭節點 head，判斷該鏈結串列中是否存在環（cycle）。
 當某個節點可以透過不斷跟隨 next 指標再次被訪問到時，表示鏈結串列中存在環。

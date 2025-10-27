@@ -1,7 +1,6 @@
 ﻿/*
 Tags: Array, Dynamic Programming
 Date: 2025-10-26
-TimeSpent: ?? mins
 ---
 給定整數 k 和整數陣列 prices，
 其中第 i 個元素代表第 i 天的股票價格。
