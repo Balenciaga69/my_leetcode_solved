@@ -1,4 +1,4 @@
-﻿import { ListNode } from '../../utils/listUtils'
+﻿import { ListNode } from '../../../utils/listUtils'
 
 /*
 Date: 2025-10-25

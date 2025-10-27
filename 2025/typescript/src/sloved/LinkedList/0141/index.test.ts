@@ -1,5 +1,5 @@
 ﻿import { hasCycle } from '.'
-import { createLinkedList } from '../../utils/listUtils'
+import { createLinkedList } from '../../../utils/listUtils'
 
 describe('hasCycle', () => {
   it('returns true for list [3,2,0,-4] with pos = 1', () => {
