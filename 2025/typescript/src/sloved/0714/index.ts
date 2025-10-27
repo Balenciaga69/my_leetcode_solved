@@ -1,4 +1,7 @@
-﻿/** 
+﻿/*
+Tags: Array, Dynamic Programming, Greedy
+*/
+/** 
 給你一個整數陣列 `coins`，代表不同面額的硬幣，以及一個整數 `amount`，代表目標金額。
 請回傳「湊出該金額所需最少硬幣數量」。
 如果無法湊出該金額，回傳 -1。
@@ -46,4 +49,4 @@ export function coinChange(coins: number[], amount: number): number {
 // 5 : 1
 // 6 : dp[1]+1 or dp[4]+1
 // 7 : dp[5]+1 or dp[2]+1
-// 8 : dp[3]+1 or 
+// 8 : dp[3]+1 or

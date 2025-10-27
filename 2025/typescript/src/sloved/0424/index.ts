@@ -1,4 +1,5 @@
 ﻿/*
+Tags: Hash Table, String, Sliding Window
 Date: 2025-10-25
 TimeSpent: 75 mins
 ---
@@ -9,7 +10,7 @@ TimeSpent: 75 mins
 請回傳在執行上述操作後，所能得到的由相同字母組成的最長子字串的長度。
 
 1 <= s.length <= 105
-s consists of only uppercase English letters.
+s consists of only uppercase English Letters.
 0 <= k <= s.length
 */
 export function characterReplacement(s: string, k: number): number {
