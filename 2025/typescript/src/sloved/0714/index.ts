@@ -1,43 +1,49 @@
-﻿/*
-Date: 2025-10-26
-TimeSpent: ?? mins
+﻿/** 
+給你一個整數陣列 `coins`，代表不同面額的硬幣，以及一個整數 `amount`，代表目標金額。
+請回傳「湊出該金額所需最少硬幣數量」。
+如果無法湊出該金額，回傳 -1。
+你可以假設每種硬幣數量無限。
 ---
-給定一個整數陣列 prices，其中 prices[i] 代表第 i 天的股票價格，
-以及一個整數 fee 代表每筆交易的手續費。
-你可以進行任意多次交易（買入與賣出），
-但每筆交易都會被扣除一次手續費（買入時不扣，賣出時扣）。
-條件如下：
-你一次只能持有一支股票（賣出後才能再買）。
-每次完成買賣動作後，會收取一次 fee。
-請回傳你可以獲得的 最大利潤。
+範例 1：
+輸入: coins = [1, 2, 5], amount = 11
+輸出: 3
+解釋: 11 = 5 + 5 + 1
 ---
-輸入: prices = [1,3,2,8,4,9], fee = 2
-輸出: 8
-說明:
-最佳交易策略如下：
-- 在價格 1 時買入，在價格 8 時賣出 → 獲利 (8 - 1 - 2) = 5
-- 在價格 4 時買入，在價格 9 時賣出 → 獲利 (9 - 4 - 2) = 3
-總利潤 = 5 + 3 = 8
+範例 2：
+輸入: coins = [2], amount = 3
+輸出: -1
 ---
-輸入: prices = [1,3,7,5,10,3], fee = 3
-輸出: 6
-說明:
-最佳策略:
-(1→7) 獲利 3, (5→10) 獲利 3
-總利潤 = 6
+範例 3：
+輸入: coins = [1], amount = 0
+輸出: 0
 ---
-限制條件
-1 <= prices.length <= 5000
-0 <= prices[i] <= 1000
+限制條件：
+1 <= coins.length <= 12
+1 <= coins[i] <= 2^31 - 1
+0 <= amount <= 10^4
 */
-export function maxProfit(prices: number[], fee: number): number {
-  let cash = 0
-  let hold = -prices[0]
-  for (let i = 1; i < prices.length; i++) {
-    const nextCash = Math.max(cash, hold + prices[i] - fee)
-    const nextHold = Math.max(hold, cash - prices[i])
-    cash = nextCash
-    hold = nextHold
+export function coinChange(coins: number[], amount: number): number {
+  if (amount === 0) return 0
+
+  const dp: number[] = new Array(amount + 1).fill(Number.MAX_VALUE)
+  dp[0] = 0
+
+  for (let i = 1; i <= amount; i++) {
+    for (const coin of coins) {
+      if (i >= coin) { //  7元 不能用 10元硬幣換
+        dp[i] = Math.min(dp[i], dp[i - coin] + 1)
+      }
+    }
   }
-  return cash
+  return dp[amount] === Number.MAX_VALUE ? -1 : dp[amount]
 }
+
+// [2,5],8
+// 1 : x
+// 2 : 1
+// 3 : x
+// 4 : d[2]+1
+// 5 : 1
+// 6 : dp[1]+1 or dp[4]+1
+// 7 : dp[5]+1 or dp[2]+1
+// 8 : dp[3]+1 or 
