@@ -31,7 +31,6 @@ export function maxProfit(prices: number[]): number {
   const cash: number[] = [0]
   const hold: number[] = [-prices[0]]
   const sold: number[] = [0]
-
   for (let i = 1; i < n; i++) {
     const p = prices[i]
     hold.push(Math.max(hold[i - 1], cash[i - 1] - p)) 

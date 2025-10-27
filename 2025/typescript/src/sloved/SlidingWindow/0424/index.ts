@@ -5,16 +5,13 @@ Date: 2025-10-25
 給定一個字串 s，以及一個整數 k。
 你可以選擇字串中的任意一個字元，並將它改成任何其他的大寫英文字母。
 你最多可以進行這樣的操作 k 次。
-
 請回傳在執行上述操作後，所能得到的由相同字母組成的最長子字串的長度。
-
 1 <= s.length <= 105
 s consists of only uppercase English Letters.
 0 <= k <= s.length
 */
 export function characterReplacement(s: string, k: number): number {
   if (s.length < 2) return s.length
-
   const map = new Map<string, number>()
   const get = (key: string) => (map.has(key) ? map.get(key)! : 0)
   let l = 0

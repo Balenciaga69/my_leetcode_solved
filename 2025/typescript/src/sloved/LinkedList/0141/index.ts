@@ -1,5 +1,4 @@
 ﻿import { ListNode } from '../../../utils/listUtils'
-
 /*
 Date: 2025-10-25
 Tags: Linked List, Two Pointers, Hash Table
@@ -18,7 +17,6 @@ pos = -1 或是鏈結串列中有效的索引位置。
 export function hasCycle(head: ListNode | null): boolean {
   return twoPointerVersion(head)
 }
-
 function twoPointerVersion(head: ListNode | null): boolean {
   let [fast, slow] = [head, head]
   while (fast) {

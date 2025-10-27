@@ -10,7 +10,6 @@ Constraints:
 s consists of English letters, digits, symbols and spaces.
 s 由英文字母、數字、符號和空格組成。
 */
-
 export function lengthOfLongestSubstring(s: string): number {
   const map = new Map<string, number>() // key,idx
   let maxLength = 0
@@ -20,7 +19,6 @@ export function lengthOfLongestSubstring(s: string): number {
     if (map.has(s[r]) && map.get(s[r])! >= l) {
       l = map.get(s[r])! + 1
     }
-
     map.set(s[r], r)
     maxLength = Math.max(r - l + 1, maxLength)
   }

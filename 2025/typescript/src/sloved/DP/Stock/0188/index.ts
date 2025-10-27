@@ -24,19 +24,16 @@ Date: 2025-10-26
 1 <= prices.length <= 10^5
 0 <= prices[i] <= 10^4
 */
-
 export function maxProfit(k: number, prices: number[]): number {
   const n = prices.length
   if (n === 0) return 0
   if (k >= n / 2) return maxProfitGreedy(prices)
-
   const hold: number[] = []
   const cash: number[] = []
   for (let i = 0; i <= k; i++) {
     cash.push(0)
     hold.push(-prices[0])
   }
-
   for (const price of prices) {
     for (let i = 1; i <= k; i++) {
       const newHold = Math.max(hold[i], cash[i - 1] - price)
@@ -45,16 +42,12 @@ export function maxProfit(k: number, prices: number[]): number {
       cash[i] = newCash
     }
   }
-
   return cash[k]
 }
-
 function maxProfitGreedy(prices: number[]): number {
   if (prices.length === 0) return 0
-
   let cash = 0 // 不持有股票的最大利潤
   let hold = -prices[0] // 持有股票的最大利潤
-
   for (let i = 1; i < prices.length; i++) {
     const newCash = Math.max(cash, hold + prices[i])
     const newHold = Math.max(hold, cash - prices[i])
