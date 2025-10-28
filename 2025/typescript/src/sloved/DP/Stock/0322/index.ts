@@ -1,6 +1,6 @@
 ﻿/*
-Tags: Array, Dynamic Programming, Breadth-First Search
-Date: 2025-10-26
+#1: 2025-10-29 [2mins]
+#1: 2025-10-26
 ---
 給定一個整數陣列 prices，其中 prices[i] 代表第 i 天的股票價格，
 以及一個整數 fee 代表每筆交易的手續費。
@@ -31,6 +31,21 @@ Date: 2025-10-26
 0 <= prices[i] <= 1000
 */
 export function maxProfit(prices: number[], fee: number): number {
+  return maxProfit_2(prices, fee)
+}
+export function maxProfit_2(prices: number[], fee: number): number {
+  let cash = 0
+  let hold = -prices[0]
+  prices.shift()
+  for (const p of prices) {
+    const nextCash = Math.max(cash, hold + p - fee)
+    const nextHold = Math.max(hold, cash - p)
+    cash = nextCash
+    hold = nextHold
+  }
+  return cash
+}
+export function maxProfit_1(prices: number[], fee: number): number {
   let cash = 0
   let hold = -prices[0]
   for (let i = 1; i < prices.length; i++) {

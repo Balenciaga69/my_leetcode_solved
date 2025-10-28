@@ -1,6 +1,7 @@
 ﻿/*
 Tags: Array, Dynamic Programming
-Date: 2025-10-26
+#2: 2025-10-29 [14min 放棄]
+#1: 2025-10-26
 ---
 給定整數 k 和整數陣列 prices，
 其中第 i 個元素代表第 i 天的股票價格。
@@ -25,6 +26,25 @@ Date: 2025-10-26
 0 <= prices[i] <= 10^4
 */
 export function maxProfit(k: number, prices: number[]): number {
+  return maxProfit_2(k, prices)
+}
+export function maxProfit_2(k: number, prices: number[]): number {
+  // hold k = hold k-1 or cash k-1 - p
+  // cash k = cash k-1 or hold k-1 + p
+  const n = prices.length
+  const hold = Array(k + 1).fill(-prices[0])
+  const cash = Array(k + 1).fill(0)
+  for (let i = 1; i < n; i++) {
+    const p = prices[i]
+    for (let j = 1; j <= k; j++) {
+      cash[j] = Math.max(cash[j], hold[j] + p)
+      hold[j] = Math.max(hold[j], cash[j - 1] - p)
+    }
+  }
+  return cash[k]
+}
+//----
+export function maxProfit_1(k: number, prices: number[]): number {
   const n = prices.length
   if (n === 0) return 0
   if (k >= n / 2) return maxProfitGreedy(prices)
