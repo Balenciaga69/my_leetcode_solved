@@ -1,8 +1,8 @@
 ﻿/*
-Tags: Array, Greedy, Dynamic Programming
-Date: 2025-10-26
-TimeSpent: 35 mins
+#2: 2025-10-28 [11 mins]
+#1: 2025-10-26 [35 mins]
 ---
+0122. 买卖股票的最佳时机II
 給定一個整數陣列 prices，其中第 i 個元素代表第 i 天的股票價格。
 你可以進行 多次買入與賣出操作，但前提是：
 你在再次買入之前，必須先賣出前一支股票。
@@ -25,11 +25,27 @@ TimeSpent: 35 mins
 說明: 價格持續下跌，無法獲利。
 */
 export function maxProfit(prices: number[]): number {
-  if (prices.length === 0) return 0
+  return maxProfit_2(prices)
+}
 
+export function maxProfit_2(prices: number[]): number {
+  const n = prices.length
   let cash = 0
   let hold = -prices[0]
+  for (let i = 1; i < n; i++) {
+    const p = prices[i]
+    const nextCash = Math.max(cash, hold + p)
+    const nextHold = Math.max(hold, cash - p)
+    cash = nextCash
+    hold = nextHold
+  }
+  return cash
+}
 
+export function maxProfit_1(prices: number[]): number {
+  if (prices.length === 0) return 0
+  let cash = 0
+  let hold = -prices[0]
   for (let i = 1; i < prices.length; i++) {
     const newCash = Math.max(cash, hold + prices[i])
     const newHold = Math.max(hold, cash - prices[i])

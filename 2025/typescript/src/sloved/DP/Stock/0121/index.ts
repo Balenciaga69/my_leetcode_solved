@@ -1,8 +1,9 @@
 ﻿/*
-Tags: Array, Dynamic Programming
-Date: 2025-10-26
+#2: 2025-10-28 [4 mins]
+#1: 2025-10-26 [3 mins]
 TimeSpent: 3 mins
 ---
+121. 買賣股票的最佳時機
 給定一個整數陣列 prices，其中第 i 個元素代表在第 i 天的股票價格。
 你只能選擇 某一天買入一支股票，並選擇 在未來的某一天賣出該股票（買入日必須早於賣出日），
 請你計算出能獲得的 最大利潤。
@@ -19,11 +20,26 @@ TimeSpent: 3 mins
 0 <= prices[i] <= 10^4
 */
 export function maxProfit(prices: number[]): number {
+  return maxProfit_2(prices)
+}
+
+export function maxProfit_1(prices: number[]): number {
   let maxProfit = 0
   let minPrice = Infinity
   for (const price of prices) {
     minPrice = Math.min(price, minPrice)
     maxProfit = Math.max(price - minPrice, maxProfit)
+  }
+  return maxProfit
+}
+
+export function maxProfit_2(prices: number[]): number {
+  const n = prices.length
+  let maxProfit = Number.NEGATIVE_INFINITY
+  let minPrice = Number.POSITIVE_INFINITY
+  for (let i = 0; i < n; i++) {
+    minPrice = Math.min(minPrice, prices[i])
+    maxProfit = Math.max(maxProfit, prices[i] - minPrice)
   }
   return maxProfit
 }
