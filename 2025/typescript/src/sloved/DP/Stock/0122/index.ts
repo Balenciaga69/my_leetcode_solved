@@ -29,6 +29,7 @@ export function maxProfit(prices: number[]): number {
 }
 
 export function maxProfit_2(prices: number[]): number {
+  if (prices.length === 0) return 0
   const n = prices.length
   let cash = 0
   let hold = -prices[0]
