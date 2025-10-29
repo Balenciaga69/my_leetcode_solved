@@ -23,4 +23,18 @@ TimeSpent: xx mins
 1 <= ratings.length <= 2 * 10^4
 0 <= ratings[i] <= 10^4
 */
-export function candy(ratings: number[]): number {}
+export function candy(ratings: number[]): number {
+  const n = ratings.length
+  const left = new Array<number>(n).fill(1)
+  const right = new Array<number>(n).fill(1)
+  // left n
+  for (let i = 0; i < n - 1; i++) {
+    if (ratings[i + 1] > ratings[i]) left[i + 1] = left[i] + 1
+  }
+  // right n
+  for (let i = n - 1; i > 0; i--) {
+    if (ratings[i - 1] > ratings[i]) right[i - 1] = right[i] + 1
+  }
+  // final time n
+  return ratings.reduce((acc, cur, idx) => acc + Math.max(left[idx], right[idx]), 0)
+}

@@ -56,4 +56,11 @@ describe('518. Coin Change II', () => {
     const expected = 1
     expect(change(amount, coins)).toBe(expected)
   })
+
+  test('Example 8: amount = 7, coins = [2, 5]', () => {
+    const amount = 7
+    const coins = [2, 5]
+    const expected = 1
+    expect(change(amount, coins)).toBe(expected)
+  })
 })

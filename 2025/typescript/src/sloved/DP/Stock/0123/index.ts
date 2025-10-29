@@ -1,8 +1,8 @@
 ﻿/*
-Tags: Array, Dynamic Programming
-Date: 2025-10-26
-TimeSpent: 21 mins
+#2: 2025-10-28 [6 mins]
+#1: 2025-10-26 [21 mins]
 ---
+LeetCode: 123. 买卖股票的最佳时机III
 給定一個整數陣列 prices，其中第 i 個元素代表第 i 天的股票價格。
 你最多只能進行 兩次交易。
 每次交易都包含一次 買入 和一次 賣出。
@@ -31,6 +31,30 @@ TimeSpent: 21 mins
 0 <= prices[i] <= 10^5
 */
 export function maxProfit(prices: number[]): number {
+  return maxProfit_2(prices)
+}
+export function maxProfit_2(prices: number[]): number {
+  const n = prices.length
+  if (n === 0) return 0
+  let cash1 = 0
+  let cash2 = 0
+  let hold1 = -prices[0]
+  let hold2 = -prices[0]
+  for (let i = 1; i < n; i++) {
+    // hold -> cash -> hold -> cash
+    const p = prices[i]
+    const nextHold1 = Math.max(hold1, -p)
+    const nextCash1 = Math.max(cash1, hold1 + p)
+    const nextHold2 = Math.max(hold2, cash1 - p)
+    const nextCash2 = Math.max(cash2, hold2 + p)
+    hold1 = nextHold1
+    cash1 = nextCash1
+    hold2 = nextHold2
+    cash2 = nextCash2
+  }
+  return cash2
+}
+export function maxProfit_1(prices: number[]): number {
   const lastIdx = prices.length - 1
   const cash1: number[] = []
   const cash2: number[] = []

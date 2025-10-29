@@ -1,8 +1,8 @@
 ﻿/*
 Tags: Array, Dynamic Programming, Greedy
-Date: 2025-10-27
-*/
-/** 
+#2: 2025-10-29 [5mins]
+#1: 2025-10-27
+---
 給你一個整數陣列 `coins`，代表不同面額的硬幣，以及一個整數 `amount`，代表目標金額。
 請回傳「湊出該金額所需最少硬幣數量」。
 如果無法湊出該金額，回傳 -1。
@@ -27,6 +27,22 @@ Date: 2025-10-27
 0 <= amount <= 10^4
 */
 export function coinChange(coins: number[], amount: number): number {
+  return coinChange_2(coins, amount)
+}
+function coinChange_2(coins: number[], amount: number): number {
+  if (amount === 0) return 0
+  const dp = new Array(amount + 1).fill(Number.MAX_VALUE)
+  for (let i = 1; i <= amount; i++) {
+    for (const c of coins) {
+      if (c === i) dp[i] = 1
+      if (i > c) {
+        dp[i] = Math.min(dp[i], dp[i - c] + 1)
+      }
+    }
+  }
+  return dp[amount] === Number.MAX_VALUE ? -1 : dp[amount]
+}
+function coinChange_1(coins: number[], amount: number): number {
   if (amount === 0) return 0
   const dp: number[] = new Array(amount + 1).fill(Number.MAX_VALUE)
   dp[0] = 0
