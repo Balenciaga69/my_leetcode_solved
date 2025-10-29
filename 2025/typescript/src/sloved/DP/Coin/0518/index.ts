@@ -1,6 +1,7 @@
 ﻿/*
 Tags: Array, Dynamic Programming
-Date: 2025-10-27
+#2: 2025-10-29 [33mins]
+#1: 2025-10-27
 ---
 給定一個整數陣列 coins，代表不同面額的硬幣，以及一個整數 amount，代表總金額。
 請返回能湊成該金額的組合數。
@@ -9,16 +10,20 @@ Date: 2025-10-27
 答案保證能放入一個 $32$ 位元有符號整數。
 */
 export function change(amount: number, coins: number[]): number {
+  return change_2(amount, coins)
+}
+function change_2(amount: number, coins: number[]): number {
   if (amount === 0) return 1
-  const dp: number[] = new Array(amount + 1).fill(0)
-  for (const coin of coins) {
-    for (let i = coin; i <= amount; i++) {
-      if (i === coin) dp[i] += 1
-      dp[i] += dp[i - coin]
+  const dp = new Array(amount + 1).fill(0)
+  for (const c of coins) {
+    for (let i = 1; i <= amount; i++) {
+      if (i > c) dp[i] += dp[i - c]
+      else if (c === i) dp[i]++
     }
   }
   return dp[amount]
 }
+
 /*
 我這題的想法是用「動態規劃（Dynamic Programming）」來記錄湊出每個金額的組合數。
 首先，我建立一個長度為 amount + 1 的陣列 dp，其中 dp[i] 代表「湊出金額 i 的組合數」。
@@ -39,3 +44,14 @@ export function change(amount: number, coins: number[]): number {
 空間複雜度：O(amount)，因為只需要一維 dp 陣列。
 這個寫法的重點在於「每個硬幣只能影響之後的金額」，確保組合不會重複計算順序。
 */
+function change_1(amount: number, coins: number[]): number {
+  if (amount === 0) return 1
+  const dp: number[] = new Array(amount + 1).fill(0)
+  for (const coin of coins) {
+    for (let i = coin; i <= amount; i++) {
+      if (i === coin) dp[i] += 1
+      dp[i] += dp[i - coin]
+    }
+  }
+  return dp[amount]
+}
