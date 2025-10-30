@@ -3,6 +3,7 @@ Tags: Hash Table, String, Sliding Window
 Date: 2025-10-25
 TimeSpent: 37 mins
 ---
+3. 无重复字符的最长子串
 Given a string s, find the length of the longest substring without duplicate characters.
 給定一個字串 s，求最長的長度 子字串，沒有重複字元。
 Constraints:
