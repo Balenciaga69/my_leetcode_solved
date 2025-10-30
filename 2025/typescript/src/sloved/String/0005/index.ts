@@ -21,5 +21,5 @@
 s 只包含英文字母與數字
 */
 export function longestPalindrome(s: string): string {
-    
+    // 未完成
 };
