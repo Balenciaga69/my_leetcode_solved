@@ -1,5 +1,6 @@
 ﻿/*
-未完成
+#2: 2025-11-03 [3mins]
+#1: 2025-11-03 [3mins]
 55. Jump Game
 給定一個整數陣列 nums。你一開始站在陣列的第一個索引位置，每個元素代表你在該位置可以跳躍的最大長度。
 
@@ -19,4 +20,26 @@
 1 <= nums.length <= 10^4
 0 <= nums[i] <= 10^5
 */
-export function canJump(nums: number[]): boolean {}
+export function canJump(nums: number[]): boolean {
+  return canJump1(nums)
+}
+export function canJump2(nums: number[]): boolean {
+  let canReachMaxIndex = 0
+  for (let i = 0; i < nums.length; i++) {
+    if (i > canReachMaxIndex) return false
+    const i_move = nums[i] + i
+    canReachMaxIndex = Math.max(canReachMaxIndex, i_move)
+  }
+  return canReachMaxIndex >= nums.length - 1
+}
+export function canJump1(nums: number[]): boolean {
+  let canReachMaxIndex = 0
+  for (let i = 0; i < nums.length - 1; i++) {
+    // 在該階段可跳躍範圍內 評估下一個最遠距離是...
+    const i_move = nums[i] + i
+    if (i <= canReachMaxIndex) {
+      canReachMaxIndex = Math.max(canReachMaxIndex, i_move)
+    }
+  }
+  return canReachMaxIndex >= nums.length - 1
+}
