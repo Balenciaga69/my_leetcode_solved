@@ -38,6 +38,8 @@ adjList = [[2,4],[1,3],[2,4],[1,3]]
 - 無向圖保證為連通（若非空）。
 */
 export function cloneGraph(node: _Node | null): _Node | null {}
+// 未完成
+
 /*
 相關題目家族：
 - 138. Copy List with Random Pointer（類似的「深拷貝」結構）

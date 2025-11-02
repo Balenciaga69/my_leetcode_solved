@@ -27,3 +27,4 @@ numCourses = 2, prerequisites = [[1,0],[0,1]]
 - 0 <= a, b < numCourses
 */
 export function canFinish(numCourses: number, prerequisites: number[][]): boolean {}
+// 未完成

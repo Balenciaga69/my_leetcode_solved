@@ -1,7 +1,8 @@
 ﻿/*
-Tags: Hash Table, String, Sliding Window
-Date: 2025-10-25
+#2: 2025-10-30 [27mins]
+#1: 2025-10-25
 ---
+424. 替换后的最长重复字符
 給定一個字串 s，以及一個整數 k。
 你可以選擇字串中的任意一個字元，並將它改成任何其他的大寫英文字母。
 你最多可以進行這樣的操作 k 次。
@@ -11,6 +12,36 @@ s consists of only uppercase English Letters.
 0 <= k <= s.length
 */
 export function characterReplacement(s: string, k: number): number {
+  return characterReplacement_2(s, k)
+}
+export function characterReplacement_2(s: string, k: number): number {
+  if (s.length < 2) return s.length
+  const n = s.length
+  const map = new Map<string, number>()
+  let l = 0
+  let maxLength = 0
+  for (let r = 0; r < n; r++) {
+    // ss(SubString) 裡面能容許 額外有 k 個不同的值
+    // 我要盤點這個 ss 誰是最多次的
+    // 最高頻數字 + K < ssLen 代表空間不夠
+    map.set(s[r], map.has(s[r]) ? map.get(s[r])! + 1 : 1)
+    while (k < r - l + 1 - getMaxTimes(map)) {
+      map.set(s[l], map.has(s[l]) ? map.get(s[l])! - 1 : 1)
+      l++
+    }
+    maxLength = Math.max(maxLength, r - l + 1)
+  }
+  return maxLength
+}
+const getMaxTimes = (map: Map<string, number>) => {
+  let maxTimes = 0
+  map.forEach((times) => {
+    maxTimes = Math.max(maxTimes, times)
+  })
+  return maxTimes
+}
+
+export function characterReplacement_1(s: string, k: number): number {
   if (s.length < 2) return s.length
   const map = new Map<string, number>()
   const get = (key: string) => (map.has(key) ? map.get(key)! : 0)
