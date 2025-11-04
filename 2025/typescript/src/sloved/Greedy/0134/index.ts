@@ -1,7 +1,6 @@
 /*
 Tags: Greedy, Array, Simulation
 Date: 2025-10-28
-TimeSpent: xx mins
 ---
 給定兩個長度相同的整數陣列 gas 和 cost。
 - gas[i] 代表你在第 i 個加油站能取得的汽油量。
