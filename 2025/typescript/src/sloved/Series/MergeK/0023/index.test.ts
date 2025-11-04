@@ -1,5 +1,5 @@
 import { mergeKLists } from '.'
-import { createLinkedList, linkedListToArray, ListNode } from '../../../utils/listUtils'
+import { createLinkedList, linkedListToArray, ListNode } from '../../../../utils/listUtils'
 
 test('example 1', () => {
   const lists = [

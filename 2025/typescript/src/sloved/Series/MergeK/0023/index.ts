@@ -15,9 +15,9 @@ lists[i] is sorted in ascending order.
 The sum of lists[i].length will not exceed 10^4.
  */
 
-import { ListNode } from '../../../utils/listUtils'
+import { ListNode } from "../../../../utils/listUtils"
 
-export { ListNode }
+
 
 export function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
   if (!lists || lists.length === 0) return null
