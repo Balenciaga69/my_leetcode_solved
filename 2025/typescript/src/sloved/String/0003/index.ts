@@ -1,5 +1,7 @@
 ﻿/*
 Tags: Hash Table, String, Sliding Window
+#2: 2025-11-04 []
+#1: 2025-10-25 [37mins]
 Date: 2025-10-25
 TimeSpent: 37 mins
 ---
@@ -12,6 +14,25 @@ s consists of English letters, digits, symbols and spaces.
 s 由英文字母、數字、符號和空格組成。
 */
 export function lengthOfLongestSubstring(s: string): number {
+  return lengthOfLongestSubstring_2(s)
+}
+export function lengthOfLongestSubstring_2(s: string): number {
+  const n = s.length
+  if (n < 2) return n
+  let maxLen = 1
+  let l = 0
+  const set = new Set<string>([s[0]])
+  for (let r = 1; r < n; r++) {
+    while (set.has(s[r])) {
+      set.delete(s[l])
+      l++
+    }
+    set.add(s[r])
+    maxLen = Math.max(maxLen, r - l + 1)
+  }
+  return maxLen
+}
+export function lengthOfLongestSubstring_1(s: string): number {
   const map = new Map<string, number>() // key,idx
   let maxLength = 0
   let l = 0

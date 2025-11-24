@@ -1,7 +1,6 @@
 /*
 Tags: Greedy, Array, Simulation
-Date: 2025-10-XX
-TimeSpent: xx mins
+Date: 2025-10-30
 ---
 題目名稱：135. Candy
 題目說明：
