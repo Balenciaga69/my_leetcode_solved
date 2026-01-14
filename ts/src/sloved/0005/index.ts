@@ -9,6 +9,13 @@ export function longestPalindrome(s: string): string {
  * Date: 2026-01-13
  */
 export function expandFromCenter(s: string): string {
+  function findPalindrome(s: string, left: number, right: number): string {
+    while (left >= 0 && right < s.length && s[left] === s[right]) {
+      left--
+      right++
+    }
+    return s.slice(left + 1, right)
+  }
   let finalStr = ''
   for (let i = 0; i < s.length; i++) {
     let curStr = ''
@@ -22,16 +29,6 @@ export function expandFromCenter(s: string): string {
     if (isLonger) finalStr = curStr
   }
   return finalStr
-}
-/**
- * Date: 2026-01-13
- */
-function findPalindrome(s: string, left: number, right: number): string {
-  while (left >= 0 && right < s.length && s[left] === s[right]) {
-    left--
-    right++
-  }
-  return s.slice(left + 1, right)
 }
 
 // 方法二: 動態規劃
