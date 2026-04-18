@@ -12,7 +12,7 @@ export function longestCommonSubsequence(text1: string, text2: string): number {
       dp[i][j] = 0
     }
   }
-  
+
   for (let i = 1; i <= m; i++) {
     for (let j = 1; j <= n; j++) {
       if (text1[i - 1] === text2[j - 1]) {
