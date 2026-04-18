@@ -1,0 +1,102 @@
+# C# / ASP.NET Core
+*.exe
+*.dll
+*.pdb
+*.ilk
+bin/
+obj/
+packages/
+*.suo
+*.user
+*.sln.docstates
+.vs/
+.vscode/
+.idea/
+*.csproj.user
+*.sln.ide
+project.lock.json
+project.assets.json
+# ASP.NET Core appsettings files
+appsettings.json
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Staging.json
+
+# Visual Studio for Mac
+.vscode/
+.idea/
+.vs/
+.vsconfig/
+
+# Node.js / TypeScript / NestJS
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+*.js
+*.d.ts
+*.map
+*.tgz
+*.tsbuildinfo
+.vscode/
+
+# Python / Flask
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+*.tox/
+*.coverage
+*.hypothesis/
+.env
+.env.*
+*.flaskenv
+instance/
+
+# Docker files
+.dockerignore
+Dockerfile
+docker-compose.yml
+docker-compose.override.yml
+*.dockerignore
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# IDE/Editor files
+*.sublime-workspace
+.vscode/
+.idea/
+
+# Test reports
+coverage/
+*.log
+
+# NuGet restore (for .NET projects)
+project.lock.json
+project.assets.json
+
+# Environment configuration (for sensitive data)
+.env
+.env.local
+.env.*.local
+
+# JetBrains IDEs (IntelliJ, PyCharm, WebStorm, etc.)
+.idea/
+
+# Other common files
+*.bak
+*.swp
+*.swo
+*.tmp
