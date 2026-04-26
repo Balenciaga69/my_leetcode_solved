@@ -5,18 +5,21 @@ public class S0209
 {
     public int MinSubArrayLen(int target, int[] nums)
     {
-        var left = 0;
+        var l = 0;
+        var r = 0;
         var sum = 0;
-        var answer = int.MaxValue;
-        for (int right = 0; right < nums.Length; right++)
+        var minAryLength = int.MaxValue;
+        while (l <= r && r < nums.Length)
         {
-            sum += nums[right];
+            sum += nums[r];
             while (sum >= target)
             {
-                answer = Math.Min(answer, right - left + 1);
-                sum -= nums[left++];
+                minAryLength = Math.Min(r - l + 1, minAryLength);
+                sum -= nums[l];
+                l++;
             }
+            r++;
         }
-        return answer == int.MaxValue ? 0 : answer;
+        return minAryLength == int.MaxValue ? 0 : minAryLength;
     }
 }

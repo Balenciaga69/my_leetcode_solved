@@ -5,22 +5,32 @@ public class S0088
 {
     public void Merge(int[] nums1, int m, int[] nums2, int n)
     {
-        var i = m - 1;
-        var j = n - 1;
-        var k = m + n - 1;
-        while (j >= 0)
-        {
-            if (i >= 0 && nums1[i] > nums2[j])
+        var i1 = m - 1;
+        var i2 = n - 1;
+        for (int curr = nums1.Length - 1; curr > -1; curr--) {
+            if(i1 == -1)
             {
-                nums1[k] = nums1[i];
-                i--;
+                nums1[curr] = nums2[i2];
+                i2--;
+                continue;
+            }
+            if(i2==-1)
+            {
+                nums1[curr] = nums1[i1];
+                i1--;
+                continue;
+            }
+            if (nums1[i1]> nums2[i2])
+            {
+                nums1[curr] = nums1[i1];
+                i1--;
             }
             else
             {
-                nums1[k] = nums2[j];
-                j--;
+                nums1[curr] = nums2[i2];
+                i2--;
             }
-            k--;
         }
     }
 }
+

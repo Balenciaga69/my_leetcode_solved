@@ -12,7 +12,7 @@ namespace LeetCode.Test
 
             var result = new S0222().CountNodes(root);
 
-            Assert.Equal(6, result);
+            Assert.Equal(7, result);
         }
 
         [Fact]
