@@ -1,3 +1,4 @@
+// 題目：判斷整數陣列 nums 中是否存在至少一個值出現兩次以上；有重複回傳 true，否則回傳 false。
 namespace LeetCode.Solutions;
 public class S0217
 {

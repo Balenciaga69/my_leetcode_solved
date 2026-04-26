@@ -1,3 +1,4 @@
+// 題目：判斷整數陣列 arr 是否為有效山脈陣列，也就是先嚴格遞增到某個峰值，再嚴格遞減，且峰值不能在兩端。
 namespace LeetCode.Solutions;
 public class S0941
 {

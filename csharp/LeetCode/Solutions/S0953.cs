@@ -1,3 +1,4 @@
+// 題目：依照外星字母順序 order，判斷單字列表 words 是否已按該字母順序由小到大排列。
 using System.Collections;
 namespace LeetCode.Solutions;
 public class S0953

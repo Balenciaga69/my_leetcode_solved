@@ -1,3 +1,4 @@
+// 題目：給定兩個整數陣列 nums1 與 nums2，回傳它們的交集；每個元素出現的次數應符合兩陣列中的較小出現次數。
 namespace LeetCode.Solutions;
 public class S0350
 {

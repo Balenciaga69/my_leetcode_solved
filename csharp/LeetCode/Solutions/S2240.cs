@@ -1,3 +1,4 @@
+// 題目：給定總預算 total 與兩種商品單價 cost1、cost2，計算購買筆與鉛筆的所有可行組合數量。
 namespace LeetCode.Solutions;
 public class S2240
 {

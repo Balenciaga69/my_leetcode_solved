@@ -1,3 +1,4 @@
+// 題目：給定一棵完全二元樹 root，計算樹中節點總數；要求使用比 O(n) 更好的演算法。
 using LeetCode.Utilities;
 //TODO:
 namespace LeetCode.Solutions;

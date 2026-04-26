@@ -1,3 +1,4 @@
+// 題目：給定多個等長字串，計算至少要刪除多少個欄位，才能讓每一欄由上到下都保持非遞減排序。
 namespace LeetCode.Solutions;
 public class S0944
 {

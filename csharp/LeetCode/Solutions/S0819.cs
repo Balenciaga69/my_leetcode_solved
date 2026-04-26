@@ -1,3 +1,4 @@
+// 題目：給定一段英文段落 paragraph 與禁用字列表 banned，忽略標點與大小寫後，找出出現次數最多且未被禁用的單字。
 using System.Text;
 namespace LeetCode.Solutions;
 public class S0819

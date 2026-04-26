@@ -1,3 +1,4 @@
+// 題目：依照棒球比賽的操作序列計算總分；操作包含數字記分、加總前兩次、前一次翻倍，以及撤銷上一筆。
 namespace LeetCode.Solutions;
 public class S0682
 {

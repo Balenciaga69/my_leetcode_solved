@@ -1,3 +1,4 @@
+// 題目：給定二元樹 root，計算所有左葉節點的值總和；左葉節點是父節點的左子節點且本身沒有子節點。
 using LeetCode.Utilities;
 namespace LeetCode.Solutions;
 public class S0404
