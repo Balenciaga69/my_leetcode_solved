@@ -1,5 +1,4 @@
 namespace LeetCode.Solutions;
-
 public class S0942
 {
     public int[] DiStringMatch(string s)

@@ -1,5 +1,4 @@
 namespace LeetCode.Solutions;
-
 public class S0961
 {
     public int RepeatedNTimes(int[] nums)

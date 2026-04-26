@@ -1,6 +1,5 @@
 using LeetCode.Utilities;
 namespace LeetCode.Solutions;
-
 public class S0404
 {
     public record QItem(TreeNode node, bool isLeft);

@@ -1,5 +1,4 @@
 namespace LeetCode.Solutions;
-
 public class S0941
 {
     public bool ValidMountainArray(int[] arr)

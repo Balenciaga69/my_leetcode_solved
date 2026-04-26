@@ -1,7 +1,5 @@
 using System.Collections;
-
 namespace LeetCode.Solutions;
-
 public class S0953
 {
     public bool IsAlienSorted(string[] words, string order)
@@ -12,7 +10,6 @@ public class S0953
         {
             table[order[i]] = i;
         }
-
         for (int i = 1; i < words.Length; i++)
         {
             var curr = words[i];

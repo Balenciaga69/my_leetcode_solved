@@ -1,5 +1,4 @@
 namespace LeetCode.Solutions;
-
 public class S0001
 {
     public int[] TwoSum(int[] nums, int target)

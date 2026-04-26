@@ -20,7 +20,6 @@ public class S0350
             else if (n1 < n2)
             {
                 i++;
-
             }
             else
             {

@@ -1,5 +1,4 @@
 namespace LeetCode.Solutions;
-
 public class S0944
 {
     public int MinDeletionSize(string[] strs)

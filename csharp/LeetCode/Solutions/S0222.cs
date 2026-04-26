@@ -1,7 +1,6 @@
 using LeetCode.Utilities;
 //TODO:
 namespace LeetCode.Solutions;
-
 public class S0222
 {
     public int CountNodes(TreeNode? root)
@@ -34,18 +33,14 @@ public class S0222
 // public int CountNodes(TreeNode? root)
 // {
 //     if (root is null) return 0;
-
 //     var leftHeight = GetHeight(root.left);
 //     var rightHeight = GetHeight(root.right);
-
 //     if (leftHeight == rightHeight)
 //     {
 //         return (1 << leftHeight) + CountNodes(root.right);
 //     }
-
 //     return (1 << rightHeight) + CountNodes(root.left);
 // }
-
 // private static int GetHeight(TreeNode? node)
 // {
 //     var height = 0;
@@ -54,6 +49,5 @@ public class S0222
 //         height++;
 //         node = node.left;
 //     }
-
 //     return height;
 // }
