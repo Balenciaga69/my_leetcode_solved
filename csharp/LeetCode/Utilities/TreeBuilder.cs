@@ -38,4 +38,53 @@ public static class TreeBuilder
         // 回傳整棵建好的樹。
         return root;
     }
+
+    public static int?[] ToLevelOrder(TreeNode? root)
+    {
+        if (root is null)
+        {
+            return [];
+        }
+
+        var result = new List<int?>();
+        var queue = new Queue<TreeNode?>();
+        queue.Enqueue(root);
+
+        while (queue.Count > 0)
+        {
+            var node = queue.Dequeue();
+
+            if (node is null)
+            {
+                result.Add(null);
+                continue;
+            }
+
+            result.Add(node.val);
+            queue.Enqueue(node.left);
+            queue.Enqueue(node.right);
+        }
+
+        while (result.Count > 0 && result[^1] is null)
+        {
+            result.RemoveAt(result.Count - 1);
+        }
+
+        return result.ToArray();
+    }
+
+    public static TreeNode? FindByValue(TreeNode? root, int value)
+    {
+        if (root is null)
+        {
+            return null;
+        }
+
+        if (root.val == value)
+        {
+            return root;
+        }
+
+        return FindByValue(root.left, value) ?? FindByValue(root.right, value);
+    }
 }

@@ -3,6 +3,11 @@ namespace LeetCode.Solutions;
 // TODO:
 public class S0209
 {
+    /*
+     * 因為 nums 都是正整數，視窗總和會隨右界增加、左界移動而單調變化。
+     * 右界逐步擴張直到 sum >= target，再盡量收縮左界更新最短長度。
+     * 每個元素最多被加入與移出一次，時間 O(n)，空間 O(1)。
+     */
     public int MinSubArrayLen(int target, int[] nums)
     {
         var l = 0;

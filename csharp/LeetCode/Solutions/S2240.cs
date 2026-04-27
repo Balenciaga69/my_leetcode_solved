@@ -2,6 +2,11 @@
 namespace LeetCode.Solutions;
 public class S2240
 {
+    /*
+     * 枚舉第一種商品購買數量 i，範圍是 0 到 total / cost1。
+     * 剩餘預算 remaining 可購買第二種商品 0..remaining / cost2 個，因此組合數加上 remaining / cost2 + 1。
+     * 只需枚舉其中一種商品，時間 O(total / cost1)，空間 O(1)。
+     */
     public long WaysToBuyPensPencils(int total, int cost1, int cost2)
     {
         long result = 0;

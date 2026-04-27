@@ -4,6 +4,11 @@ using LeetCode.Utilities;
 namespace LeetCode.Solutions;
 public class S0222
 {
+    /*
+     * 完全二元樹若最左高度等於最右高度，代表這棵子樹是滿二元樹，可直接用 2^h - 1 計算。
+     * 若高度不同，遞迴計算左右子樹節點數。
+     * 每層只走左右邊界高度，時間約 O(log^2 n)，優於一般 DFS 的 O(n)。
+     */
     public int CountNodes(TreeNode? root)
     {
         if (root is null) return 0;
