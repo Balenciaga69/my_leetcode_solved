@@ -6,27 +6,13 @@ namespace LeetCode.Solutions;
 
 public class S0019
 {
-    private const Method ActiveMethod = Method.OnePassTwoPointers;
-
-    private enum Method
-    {
-        OnePassTwoPointers,
-        TwoPassLength
-    }
-
     /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設使用 dummy node 加雙指針，一次遍歷即可移除倒數第 n 個節點。
+     * 使用 dummy node 加雙指針，一次遍歷即可移除倒數第 n 個節點。
      * dummy node 可統一處理刪除 head 的邊界情況。
      */
     public ListNode? RemoveNthFromEnd(ListNode? head, int n)
     {
-        return ActiveMethod switch
-        {
-            Method.OnePassTwoPointers => RemoveNthFromEnd_OnePassTwoPointers(head, n),
-            Method.TwoPassLength => RemoveNthFromEnd_TwoPassLength(head, n),
-            _ => throw new InvalidOperationException("Unknown solution method.")
-        };
+        return RemoveNthFromEnd_OnePassTwoPointers(head, n);
     }
 
     /*

@@ -4,27 +4,13 @@ namespace LeetCode.Solutions;
 
 public class S0238
 {
-    private const Method ActiveMethod = Method.OutputPrefixSuffix;
-
-    private enum Method
-    {
-        OutputPrefixSuffix,
-        PrefixSuffixArrays
-    }
-
     /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設把輸出陣列先填成左側乘積，再由右往左乘上右側乘積。
+     * 把輸出陣列先填成左側乘積，再由右往左乘上右側乘積。
      * 不使用除法，且除了輸出陣列外只用 O(1) 額外空間。
      */
     public int[] ProductExceptSelf(int[] nums)
     {
-        return ActiveMethod switch
-        {
-            Method.OutputPrefixSuffix => ProductExceptSelf_OutputPrefixSuffix(nums),
-            Method.PrefixSuffixArrays => ProductExceptSelf_PrefixSuffixArrays(nums),
-            _ => throw new InvalidOperationException("Unknown solution method.")
-        };
+        return ProductExceptSelf_OutputPrefixSuffix(nums);
     }
 
     /*

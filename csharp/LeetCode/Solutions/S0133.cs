@@ -6,27 +6,13 @@ namespace LeetCode.Solutions;
 
 public class S0133
 {
-    private const Method ActiveMethod = Method.DfsHashMap;
-
-    private enum Method
-    {
-        DfsHashMap,
-        BfsHashMap
-    }
-
     /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設使用 DFS 搭配 Dictionary<原節點, 複製節點>，避免無向圖循環造成無限遞迴。
+     * 使用 DFS 搭配 Dictionary<原節點, 複製節點>，避免無向圖循環造成無限遞迴。
      * 圖中每個節點與邊各處理一次，時間 O(V + E)。
      */
     public Node? CloneGraph(Node? node)
     {
-        return ActiveMethod switch
-        {
-            Method.DfsHashMap => CloneGraph_DfsHashMap(node),
-            Method.BfsHashMap => CloneGraph_BfsHashMap(node),
-            _ => throw new InvalidOperationException("Unknown solution method.")
-        };
+        return CloneGraph_DfsHashMap(node);
     }
 
     /*

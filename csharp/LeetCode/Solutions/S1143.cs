@@ -4,27 +4,13 @@ namespace LeetCode.Solutions;
 
 public class S1143
 {
-    private const Method ActiveMethod = Method.DynamicProgramming1D;
-
-    private enum Method
-    {
-        DynamicProgramming1D,
-        DynamicProgramming2D
-    }
-
     /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設使用一維 DP 滾動陣列，從字串尾端往前計算。
+     * 使用一維 DP 滾動陣列，從字串尾端往前計算。
      * 狀態代表 text1[i..] 與 text2[j..] 的 LCS 長度。
      */
     public int LongestCommonSubsequence(string text1, string text2)
     {
-        return ActiveMethod switch
-        {
-            Method.DynamicProgramming1D => LongestCommonSubsequence_DynamicProgramming1D(text1, text2),
-            Method.DynamicProgramming2D => LongestCommonSubsequence_DynamicProgramming2D(text1, text2),
-            _ => throw new InvalidOperationException("Unknown solution method.")
-        };
+        return LongestCommonSubsequence_DynamicProgramming1D(text1, text2);
     }
 
     /*

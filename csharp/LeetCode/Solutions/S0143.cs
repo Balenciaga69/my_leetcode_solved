@@ -6,32 +6,13 @@ namespace LeetCode.Solutions;
 
 public class S0143
 {
-    private static readonly Method ActiveMethod = Method.FindMiddleReverseMerge;
-
-    private enum Method
-    {
-        FindMiddleReverseMerge,
-        Stack
-    }
-
     /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設使用找中點、反轉後半段、交錯合併三步。
+     * 使用找中點、反轉後半段、交錯合併三步。
      * 只改節點指標不改值，時間 O(n)，額外空間 O(1)。
      */
     public void ReorderList(ListNode? head)
     {
-        switch (ActiveMethod)
-        {
-            case Method.FindMiddleReverseMerge:
-                ReorderList_FindMiddleReverseMerge(head);
-                break;
-            case Method.Stack:
-                ReorderList_Stack(head);
-                break;
-            default:
-                throw new InvalidOperationException("Unknown solution method.");
-        }
+        ReorderList_FindMiddleReverseMerge(head);
     }
 
     /*

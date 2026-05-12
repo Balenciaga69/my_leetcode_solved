@@ -4,27 +4,13 @@ namespace LeetCode.Solutions;
 
 public class S0139
 {
-    private const Method ActiveMethod = Method.DynamicProgramming;
-
-    private enum Method
-    {
-        DynamicProgramming,
-        DfsMemo
-    }
-
     /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設使用一維 DP：canBreak[i] 表示 s[0..i) 是否可被字典切分。
+     * 使用一維 DP：canBreak[i] 表示 s[0..i) 是否可被字典切分。
      * 用 HashSet 查字典並限制最大單字長度，避免無效枚舉。
      */
     public bool WordBreak(string s, IList<string> wordDict)
     {
-        return ActiveMethod switch
-        {
-            Method.DynamicProgramming => WordBreak_DynamicProgramming(s, wordDict),
-            Method.DfsMemo => WordBreak_DfsMemo(s, wordDict),
-            _ => throw new InvalidOperationException("Unknown solution method.")
-        };
+        return WordBreak_DynamicProgramming(s, wordDict);
     }
 
     /*

@@ -4,27 +4,13 @@ namespace LeetCode.Solutions;
 
 public class S0647
 {
-    private const Method ActiveMethod = Method.ExpandAroundCenter;
-
-    private enum Method
-    {
-        ExpandAroundCenter,
-        DynamicProgramming
-    }
-
     /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設使用中心擴張，分別處理奇數長度與偶數長度回文。
+     * 使用中心擴張，分別處理奇數長度與偶數長度回文。
      * 字串長度最多 1000，O(n^2) 可接受且空間 O(1)。
      */
     public int CountSubstrings(string s)
     {
-        return ActiveMethod switch
-        {
-            Method.ExpandAroundCenter => CountSubstrings_ExpandAroundCenter(s),
-            Method.DynamicProgramming => CountSubstrings_DynamicProgramming(s),
-            _ => throw new InvalidOperationException("Unknown solution method.")
-        };
+        return CountSubstrings_ExpandAroundCenter(s);
     }
 
     /*

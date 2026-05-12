@@ -4,27 +4,13 @@ namespace LeetCode.Solutions;
 
 public class S0153
 {
-    private const Method ActiveMethod = Method.BinarySearchRightCompare;
-
-    private enum Method
-    {
-        BinarySearchRightCompare,
-        BinarySearchFindPivot
-    }
-
     /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設用二分比較 nums[mid] 與 nums[right]，判斷最小值位於哪一側。
+     * 用二分比較 nums[mid] 與 nums[right]，判斷最小值位於哪一側。
      * 陣列元素不重複，所以每次都能明確縮小範圍，時間 O(log n)。
      */
     public int FindMin(int[] nums)
     {
-        return ActiveMethod switch
-        {
-            Method.BinarySearchRightCompare => FindMin_BinarySearchRightCompare(nums),
-            Method.BinarySearchFindPivot => FindMin_BinarySearchFindPivot(nums),
-            _ => throw new InvalidOperationException("Unknown solution method.")
-        };
+        return FindMin_BinarySearchRightCompare(nums);
     }
 
     /*

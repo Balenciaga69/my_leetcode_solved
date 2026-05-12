@@ -6,27 +6,13 @@ namespace LeetCode.Solutions;
 
 public class S0102
 {
-    private const Method ActiveMethod = Method.BfsQueue;
-
-    private enum Method
-    {
-        BfsQueue,
-        DfsByDepth
-    }
-
     /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設使用 BFS queue，每次處理目前 queue 中固定數量的節點形成一層。
+     * 使用 BFS queue，每次處理目前 queue 中固定數量的節點形成一層。
      * 時間 O(n)，空間 O(w)，w 是樹的最大寬度。
      */
     public IList<IList<int>> LevelOrder(TreeNode? root)
     {
-        return ActiveMethod switch
-        {
-            Method.BfsQueue => LevelOrder_BfsQueue(root),
-            Method.DfsByDepth => LevelOrder_DfsByDepth(root),
-            _ => throw new InvalidOperationException("Unknown solution method.")
-        };
+        return LevelOrder_BfsQueue(root);
     }
 
     /*

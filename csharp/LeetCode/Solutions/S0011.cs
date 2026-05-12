@@ -4,27 +4,13 @@ namespace LeetCode.Solutions;
 
 public class S0011
 {
-    private const Method ActiveMethod = Method.TwoPointers;
-
-    private enum Method
-    {
-        TwoPointers,
-        BruteForce
-    }
-
     /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設使用雙指針，從最寬容器開始往內縮，保留可能提高高度的一側。
+     * 使用雙指針，從最寬容器開始往內縮，保留可能提高高度的一側。
      * 時間 O(n)，空間 O(1)，是本題面試偏好的解法。
      */
     public int MaxArea(int[] height)
     {
-        return ActiveMethod switch
-        {
-            Method.TwoPointers => MaxArea_TwoPointers(height),
-            Method.BruteForce => MaxArea_BruteForce(height),
-            _ => throw new InvalidOperationException("Unknown solution method.")
-        };
+        return MaxArea_TwoPointers(height);
     }
 
     /*

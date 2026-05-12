@@ -6,27 +6,13 @@ namespace LeetCode.Solutions;
 
 public class S0230
 {
-    private const Method ActiveMethod = Method.IterativeInorder;
-
-    private enum Method
-    {
-        IterativeInorder,
-        RecursiveInorder
-    }
-
     /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設使用 BST 的中序遍歷會得到遞增序列這個性質。
+     * 使用 BST 的中序遍歷會得到遞增序列這個性質。
      * 走到第 k 個節點就立即回傳，不需要遍歷完整棵樹。
      */
     public int KthSmallest(TreeNode? root, int k)
     {
-        return ActiveMethod switch
-        {
-            Method.IterativeInorder => KthSmallest_IterativeInorder(root, k),
-            Method.RecursiveInorder => KthSmallest_RecursiveInorder(root, k),
-            _ => throw new InvalidOperationException("Unknown solution method.")
-        };
+        return KthSmallest_IterativeInorder(root, k);
     }
 
     /*

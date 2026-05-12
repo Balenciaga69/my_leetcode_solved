@@ -4,27 +4,13 @@ namespace LeetCode.Solutions;
 
 public class S0033
 {
-    private const Method ActiveMethod = Method.OnePassBinarySearch;
-
-    private enum Method
-    {
-        OnePassBinarySearch,
-        FindPivotThenBinarySearch
-    }
-
     /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設使用一次二分搜尋，每輪判斷左半或右半哪一段仍保持排序。
+     * 使用一次二分搜尋，每輪判斷左半或右半哪一段仍保持排序。
      * 根據 target 是否落在排序區間內縮小搜尋範圍，時間 O(log n)。
      */
     public int Search(int[] nums, int target)
     {
-        return ActiveMethod switch
-        {
-            Method.OnePassBinarySearch => Search_OnePassBinarySearch(nums, target),
-            Method.FindPivotThenBinarySearch => Search_FindPivotThenBinarySearch(nums, target),
-            _ => throw new InvalidOperationException("Unknown solution method.")
-        };
+        return Search_OnePassBinarySearch(nums, target);
     }
 
     /*

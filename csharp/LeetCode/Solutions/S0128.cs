@@ -4,27 +4,13 @@ namespace LeetCode.Solutions;
 
 public class S0128
 {
-    private const Method ActiveMethod = Method.HashSetStartScan;
-
-    private enum Method
-    {
-        HashSetStartScan,
-        HashSetRemoveExpand
-    }
-
     /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設使用 HashSet 找每段連續序列的起點，只從沒有前驅 num - 1 的數開始延伸。
+     * 使用 HashSet 找每段連續序列的起點，只從沒有前驅 num - 1 的數開始延伸。
      * 每個數最多被查找常數次，平均時間 O(n)。
      */
     public int LongestConsecutive(int[] nums)
     {
-        return ActiveMethod switch
-        {
-            Method.HashSetStartScan => LongestConsecutive_HashSetStartScan(nums),
-            Method.HashSetRemoveExpand => LongestConsecutive_HashSetRemoveExpand(nums),
-            _ => throw new InvalidOperationException("Unknown solution method.")
-        };
+        return LongestConsecutive_HashSetStartScan(nums);
     }
 
     /*

@@ -6,27 +6,13 @@ namespace LeetCode.Solutions;
 
 public class S0235
 {
-    private const Method ActiveMethod = Method.IterativeBst;
-
-    private enum Method
-    {
-        IterativeBst,
-        RecursiveBst
-    }
-
     /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設利用 BST 性質：若 p、q 都小於目前節點，LCA 在左子樹；都大於則在右子樹。
+     * 利用 BST 性質：若 p、q 都小於目前節點，LCA 在左子樹；都大於則在右子樹。
      * 第一個介於兩者之間的節點就是最低共同祖先。
      */
     public TreeNode? LowestCommonAncestor(TreeNode? root, TreeNode? p, TreeNode? q)
     {
-        return ActiveMethod switch
-        {
-            Method.IterativeBst => LowestCommonAncestor_IterativeBst(root, p, q),
-            Method.RecursiveBst => LowestCommonAncestor_RecursiveBst(root, p, q),
-            _ => throw new InvalidOperationException("Unknown solution method.")
-        };
+        return LowestCommonAncestor_IterativeBst(root, p, q);
     }
 
     /*

@@ -4,27 +4,13 @@ namespace LeetCode.Solutions;
 
 public class S0152
 {
-    private const Method ActiveMethod = Method.TrackMaxMinProduct;
-
-    private enum Method
-    {
-        TrackMaxMinProduct,
-        PrefixSuffix
-    }
-
     /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設同時追蹤以目前位置結尾的最大與最小乘積。
+     * 同時追蹤以目前位置結尾的最大與最小乘積。
      * 負數會讓最大/最小互換，因此必須同時保存兩者。
      */
     public int MaxProduct(int[] nums)
     {
-        return ActiveMethod switch
-        {
-            Method.TrackMaxMinProduct => MaxProduct_TrackMaxMinProduct(nums),
-            Method.PrefixSuffix => MaxProduct_PrefixSuffix(nums),
-            _ => throw new InvalidOperationException("Unknown solution method.")
-        };
+        return MaxProduct_TrackMaxMinProduct(nums);
     }
 
     /*

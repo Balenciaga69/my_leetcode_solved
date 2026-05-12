@@ -4,35 +4,34 @@ namespace LeetCode.Solutions;
 
 public class S0003
 {
-    private const Method ActiveMethod = Method.SlidingWindowLastSeen;
-
-    private enum Method
-    {
-        SlidingWindowLastSeen,
-        SlidingWindowSet
-    }
-
-    /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設使用 LastSeen 滑動視窗：遇到重複字元時，直接把左界跳到上次出現位置後一格。
-     * 這比逐格移除更適合面試說明，時間 O(n)，空間 O(min(n, 字元集大小))。
-     */
     public int LengthOfLongestSubstring(string s)
     {
-        return ActiveMethod switch
-        {
-            Method.SlidingWindowLastSeen => LengthOfLongestSubstring_SlidingWindowLastSeen(s),
-            Method.SlidingWindowSet => LengthOfLongestSubstring_SlidingWindowSet(s),
-            _ => throw new InvalidOperationException("Unknown solution method.")
-        };
+        return LengthOfLongestSubstring_MyMethod(s);
     }
 
-    /*
-     * 用 Dictionary 記錄每個字元最近一次出現的索引。
-     * 右指針逐字掃描；若目前字元曾在視窗內出現，左指針直接跳過舊位置。
-     * 每個字元只被右指針處理一次，所以時間 O(n)。
-     */
-    public int LengthOfLongestSubstring_SlidingWindowLastSeen(string s) // __滑動視窗LastSeen法
+    public int LengthOfLongestSubstring_MyMethod(string s)
+    {
+        // 開左右位置, 如果右邊有重複則直到沒重複為止
+        var set = new HashSet<char>();
+        var left = 0;
+        var result = 0;
+
+        for (int right = 0; right < s.Length; right++)
+        {
+            while (set.Contains(s[right]))
+            {
+                set.Remove(s[left]);
+                left++;
+            }
+
+            result = Math.Max(result, right - left + 1);
+            set.Add(s[right]);
+        }
+
+        return result;
+    }
+    // 滑動視窗 + Dictionary 記錄每個字元最後出現的位置。
+    public int LengthOfLongestSubstring_SlidingWindowLastSeen(string s)
     {
         var lastSeen = new Dictionary<char, int>();
         var left = 0;
@@ -54,12 +53,8 @@ public class S0003
         return maxLength;
     }
 
-    /*
-     * 用 HashSet 維護目前視窗內的字元。
-     * 當右指針遇到重複字元時，左指針逐步移動並移除字元，直到重複消失。
-     * 寫法直觀，時間仍是 O(n)，因為每個字元最多進出視窗一次。
-     */
-    public int LengthOfLongestSubstring_SlidingWindowSet(string s) // __滑動視窗HashSet法
+    // 另一版：滑動視窗 + HashSet，保留當備用寫法。
+    public int LengthOfLongestSubstring_SlidingWindowSet(string s)
     {
         var window = new HashSet<char>();
         var left = 0;

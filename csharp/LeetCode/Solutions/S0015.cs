@@ -4,27 +4,13 @@ namespace LeetCode.Solutions;
 
 public class S0015
 {
-    private const Method ActiveMethod = Method.SortTwoPointers;
-
-    private enum Method
-    {
-        SortTwoPointers,
-        HashSetPerFixed
-    }
-
     /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設使用排序後固定第一個數，再用雙指針找剩餘兩數。
+     * 使用排序後固定第一個數，再用雙指針找剩餘兩數。
      * 透過跳過相同值避免重複三元組，時間 O(n^2)。
      */
     public IList<IList<int>> ThreeSum(int[] nums)
     {
-        return ActiveMethod switch
-        {
-            Method.SortTwoPointers => ThreeSum_SortTwoPointers(nums),
-            Method.HashSetPerFixed => ThreeSum_HashSetPerFixed(nums),
-            _ => throw new InvalidOperationException("Unknown solution method.")
-        };
+        return ThreeSum_SortTwoPointers(nums);
     }
 
     /*

@@ -6,27 +6,13 @@ namespace LeetCode.Solutions;
 
 public class S0105
 {
-    private const Method ActiveMethod = Method.RecursiveIndexMap;
-
-    private enum Method
-    {
-        RecursiveIndexMap,
-        RecursiveSlicing
-    }
-
     /*
-     * 主方法只負責切換目前採用的解法。
-     * 預設使用 preorder 指針加 inorder 索引表，避免每次切陣列造成額外成本。
+     * 使用 preorder 指針加 inorder 索引表，避免每次切陣列造成額外成本。
      * 時間 O(n)，空間 O(n)。
      */
     public TreeNode? BuildTree(int[] preorder, int[] inorder)
     {
-        return ActiveMethod switch
-        {
-            Method.RecursiveIndexMap => BuildTree_RecursiveIndexMap(preorder, inorder),
-            Method.RecursiveSlicing => BuildTree_RecursiveSlicing(preorder, inorder),
-            _ => throw new InvalidOperationException("Unknown solution method.")
-        };
+        return BuildTree_RecursiveIndexMap(preorder, inorder);
     }
 
     /*
